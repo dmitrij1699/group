@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{ dsfont }
+\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{cases}
+\usepackage{ wasysym }
+\flushbottom 
+\begin{document}
+	\newtheorem{Th}{Теорема}
+	\newtheorem{Def}{Определение}
+
+Повторение.
+
+\begin{enumerate}
+	\item $n\mathds{Z}<\mathds{Z},+ ; a\sim b\leftrightarrow -a+b\in n\mathds{Z}\leftrightarrow b\in a+n\mathds{Z}$
+	
+	$T_a=\{b:a\sim b\}=a+n\mathds{Z}=\{a,a+n,a-n,a+2n,a-2n, \dots \}$
+	
+	$T_a=[a]_n=\bar{a}_n=[a]=\bar{a}=a$
+	
+	$[a]+[b]=[a+b]$
+	
+	$[a][b]={ab}$
+	
+	\begin{Th} 
+	$	\left
+			.\begin{aligned}
+				a\sim a^\prime \\
+				b\sim b^\prime
+			\end{aligned}
+		 \right \} $
+		$\rightarrow$
+		$\begin{cases}
+		[a^\prime +b^\prime]=[a+b] \\
+		[a^\prime b^\prime]=[ab]
+		\end{cases}$
+	\end{Th}
+	$\LHD a^\prime =a+nl; b^\prime=b+nk \\
+	a^\prime+b^\prime=a+b+n(l+k)\rightarrow [a^\prime+b^\prime]=[a+b] \\
+	a^\prime b^\prime=ab+n(ak+bl+nlk)\rightarrow [a^\prime b^\prime]=[ab]
+	\RHD$
+	
+	\item $H<G,\cdot$
+	
+	\begin{Th} 
+		$|T_x|=|T_z|=|H|$
+	\end{Th}
+	
+	$\LHD xh_1=xh_2 \rightarrow h_1=h_2 \RHD$
+	
+	\begin{Th}[Теорема Лагранжа] 
+		Если $|G|=n<\infty \rightarrow |G|\vdots |H|$ 
+	\end{Th}
+	$\LHD \RHD$
+	
+	\textbf{Следствие из теоремы Лагранжа:} $|G|\vdots |x|$
+	
+	$\LHD x\rightarrow H=<x>, |H|=|x|
+	\RHD$
+	
+\end{enumerate}
+
+$\mathds{Z},n\mathds{Z}\rightarrow \frac{\mathds{Z}}{n\mathds{Z}}=\mathds{Z}_n=\{\bar{0},\bar{1},\bar{2},\bar{3}, \dots , \bar{n-1}\}$- кольцо остатсков при делении на $n$
+
+
+\begin{Th}\label{thFirst}
+	$\mathds{Z}_n$-поле $\leftrightarrow n$-простое 
+\end{Th}
+
+$\LHD \RHD$
+
+
+\begin{Th}\label{thSecond}
+	$\mathds{Z}_n \quad k-$обратим в $\mathds{Z}_n \leftrightarrow n$ и $k$-взаимно просты $\bigl\{ (n,k) =1 \bigr\} $
+\end{Th}
+
+\begin{Def}
+	Функция Эйлера$\bigl\{\varphi (n) \bigr\} $ равна количеству натуральных чисел, меньших чем $n$ и взаимно простых с $n$.
+\end{Def}
+
+\begin{Def}
+	$S_n$-группа подстановок(так же называют симметричной группой) \\
+	$x=\{1,2,3, \dots , n\}$, $S_n$-мн-во биективных функций $\varphi :X\rightarrow X$ \\
+	$\varphi= \begin{pmatrix}
+	1 & 2 & 3 & 4 & \dots & n \\
+	\varphi(1) & \varphi(2) & \varphi(3) & \varphi(4) & \dots & \varphi(n)
+	\end{pmatrix}$
+\end{Def}
+
+\textbf{Примеры:} $\varphi=\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 3 & 1
+\end{pmatrix}$
+
+$ \varphi(1)=2 , \varphi(2)=4, \varphi(3)=3, \varphi(4)=1$
+
+$\phi=\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+4 & 2 & 1 & 3
+\end{pmatrix}$
+
+$(\varphi\phi)(1)=\varphi(\phi(1))=\varphi(4)=1$
+
+$\varphi^{-1}\varphi=\varphi\varphi^{-1}=e$
+
+$e=\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+1 & 2 & 3 & 4
+\end{pmatrix}$
+
+$\varphi^{-1}=\begin{pmatrix}
+2 & 4 & 3 & 1 \\
+1 & 2 & 3 & 3
+\end{pmatrix}=\begin{pmatrix}
+1 & 2 & 3 & 3 \\
+4 & 1 & 3 & 2 
+\end{pmatrix}$
+
+$S_n$-группа  $\qquad |S_n|=n!$
+
+\textbf{Цикл}
+
+$\varphi=\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 3 & 1
+\end{pmatrix}=(124)(3)=(3)(124)$
+
+$\phi=\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+2 & 1 & 4 & 3
+\end{pmatrix}=(12)(34)=(34)(12)$
+
+\textbf{Независимые циклы}-называются циклы, если числа входят в один цикл, но не входят во второй цикл.
+
+\begin{Th}
+	Независимые циклы коммутируют друг с другом (или $\alpha ,\beta$-независимые циклы $\rightarrow \alpha\beta=\beta\alpha$ )
+\end{Th}
+
+\begin{Def}
+	Циклом длины два называется транспозиция.
+\end{Def}
+
+\begin{Th}
+	Если $\alpha=(i_1,i_2, \dots ,i_k)$-цикл длины $k \rightarrow |\alpha|=k$
+\end{Th}
+
+\begin{Th}
+	Пусть $\varphi=\alpha_1\alpha_2\dots\alpha_n$- произведение независимых циклов.\\
+	$\alpha_1=(i_1,i_2,\dots, i_k)$\\
+	$\alpha_2=(j_1,j_2,\dots, j_l) \rightarrow |\varphi|=$НОК$(|\alpha_1|,|\alpha_2|,\dots,|\alpha_m|)$
+\end{Th}
+
+
+\end{document}

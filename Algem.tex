@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{dsfont}
+%\usepackage{mathrsfs}
+%\usepackage{ dsfont }
+\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage{lipsum}
+%\flushbottom 
+\begin{document}
+
+\section{07.09}
+Группоид= мн-во + бинарная операция
+
+Полугруппа= Группоид+св-во ассицоативности ($(x*y)*z=x*(y*z)$)
+
+Моноид = Полугруппа + неутральный элемент ($(e*x=x*e=x) ; (0+x=x+0=x)$)
+
+Группа = Моноид + каждый элемент имеет обратный (противоположный) ($(x*x^{-1}=x^{-1}*x=e) ; (x+(-x)=(-x)+x=0)$)
+
+%Примеры: $x=\mathds{N}$)
+%$(x,+) \mathds{N}$ -полугруппа
+%$(x,*) \mathds{N]$
+%...
+
+Простейшие теоремы:\begin{enumerate}
+\item Единственность нейтрального элемента
+\item Единственность обратного элемента
+\item $(x*y)^{-1}=y^{-1}*x^{-1}$
+\item $(x^{-1})^n=(x^n)^{-1} , n \in \mathds{N}$
+\item $x^n*x^m=x^{n+m} n,m \in \mathds{Z} $ 
+\end{enumerate}
+
+\section{14.09}
+Дополнительные свойства $\mathds{G}$	
+\begin{enumerate}
+\item Уравнение $ax=b$ имеет единственное решение $x=a^{-1}b$ 
+$(xa=b\rightarrow x=ba^{-1})$
+\item $xy=e \rightarrow y=x^{-1} $
+\end{enumerate}
+
+Коммутативная группа = абелева группа (группа, в которой выполняется свойство коммутативности $\forall x, y \in \mathds{G} \rightarrow xy=yx$)
+
+Порядок группы ($|\mathds{G}|$) -число элементов в группе
+
+Порядок элемента ($|\mathds{X}|)= min \{ n\in\mathds{N} :x^n=e\}$ (т.е. минимальная натуральная степень, в которую нужно возвести элемент, что бы он превратился в "единицу") 
+
+Циклическая группа $\mathds{G}$ -если $ \exists a \in \mathds{G} : \mathds{G}=\{a^k, k \in \mathds{Z} \}$ (можно так же сказать, что циклическая подгруппа состоит из всех степеней элемента) 
+
+Циклическая группа называется конечной, если $|\mathds{G}|<\infty; |\mathds{G}|=n \rightarrow \mathds{G}=\{e,a,a^2, \dots , a^{n-1} \}, a^n=e$
+
+Циклическая группа называется бесконечной, если $|\mathds{G}|= \infty \rightarrow \mathds{G}=\{ e,a,a^{-1},a^2,a^{-2}, \dots, a^k, a^{-k}, \dots \}$
+
+$\mathds{H} \le \mathds{G}$;
+$\mathds{G}:\mathds{H}$ является группой относительно той же операции. (Подмножество H группы G называется подгруппой этой группы, если оно само является группой относительно той же операции)
+
+Тривиальные подгруппы- это $e$ и $\mathds{G}$
+
+Если $\mathds{H}\le \mathds{G}$ и $\mathds{H} \not= \mathds{G}$, то будем писать $\mathds{H}<\mathds{G}$.
+
+\textbf{T1.} $H<G \rightarrow e_H=e_G$
+
+\textbf{Док-во:} $h \in \mathds{H} \rightarrow he_H=h ; he_G=h \rightarrow  e_Gg^{-1}he_H=h^{-1}h=e_Ge_H \rightarrow e_H=e_G $
+
+\textbf{Т2.} $H<G, h \in H \rightarrow h_H^{-1}=h_G^{-1}$
+
+Критерий подгруппы: $ \daleth  H<G$ и $H<G \leftrightarrow $ 
+\begin{equation*}
+ \begin{cases}
+   H \not= \varnothing 
+   \\
+   x \in H
+   \\
+   y \in H
+ \end{cases}
+\end{equation*} , то $xy=H$ 
+
+$\daleth G$ -конечная группа 
+
+Пусть $H<G  \rightarrow$ 
+\begin{equation*}
+ \begin{cases}
+   H \not= \varnothing  
+   \\
+   x,y \in H, xy \in H
+ \end{cases}
+\end{equation*}
+
+$x\in H \rightarrow x^k <H, \forall k \in N$, т.к. $|G|<\infty\rightarrow E l,m : x^l=x^m\rightarrow x^{l-m}\rightarrow =e \rightarrow e \in H$
+
+Задачи
+\begin{enumerate}
+\item 
+\end{enumerate}
+
+Отношения на мн-ве $M$:
+$T \le M*M=\{(a,b):a,b\in M\}$
+
+$aTb$-если пара$(a,b)\in T$ 
+
+Примеры:
+\begin{enumerate}
+\item $T=\varnothing$
+\item $T=M*M$
+\item $M=R, aTb \leftrightarrow a<=b$
+\item $M=R, aTb \leftrightarrow b=a^2$
+\end{enumerate}
+
+T называется отношением эквивалентности, если оно:
+\begin{enumerate}
+\item $aTa$ (рефлексивность)
+\item $aTb \rightarrow bTa$ (симметричность)
+\item $aTb, bTc \rightarrow aTc$ (транзитивность)
+\end{enumerate}
+
+Будем иметь ввиду вместо $aTb=a\sim b$, $T_a=\{b\in M:a\sim b\}$
+
+Теорема:
+\begin{enumerate}
+\item $a\in T_a$
+\item $\bigcup_{a\in M} T_a=M$
+\item $T_a \bigcap T_b \not= \varnothing \rightarrow T_a=T_b$
+\end{enumerate}
+
+%Здесь док-во T_a=T_b
+
+Итак: M разбито на непересекающиеся подмножества $M\rightarrow M/\sim$ (факторизация)
+
+Пример: $H<G x\sim y \leftrightarrow x^{-1}y \in H \leftrightarrow \exists h\in H: x^{-1}y=h\leftrightarrow y=xh, h\in H$; таким образом $T_x=\{y:x\sim y\}=\{y:y=xh\}=xH;$
+
+Определение: $xH=\{xh, h\in H\}$
+
+$T_x=xH \rightarrow$ левым смежным классом по подгруппе $H$
+
+Аналогично, если $ x\sim y$ ввести по формуле $yx^{-1}\in H\rightarrow T_x=Hx$-правый смежный класс.
+
+\section{22.09}
+
+Необходимые понятия:подгруппа, |G|, |x|, отношение эквивалентности (рефликсивность, симметричность, транзитивность)
+
+$T_a=\{b:a\sim b\} $
+
+Тут что-то было..
+
+Если $(Z,+)$ и $(nZ,+)$, то $a\rightarrow a+nZ$
+
+Вместо $a\rightarrow a+nZ$ будем писать $[a]_n$ или $ \bar{a_n}$ или $\bar{a}$ или(like a pro) $a$
+
+$Z/_{\sim}=Z/_{nZ}=Z_n$
+
+Кольцо$(A,*,+)$
+$\bigoplus$-коммутативность
+$\bigodot$-дистрибутивность
+
+Бывают кольца коммутативные$(ab=ba)$ и с единицей$(ea=ae=a)$
+
+Подкольцо-это кольцо относительно тех же операций
+
+Поле-коммутативное ассоциативное кольцо с единицей $e\not= 0$.Кроме того, $\forall x\not=0 \exists x^{-1} (xx^{-1}=x^{-1}x=e)$
+
+$[a]_n+[b]_n=[a+b]_n$ и $[a]_n [b]_n=[ab]_n$
+
+Циклические группы.
+
+Из семинара: $|x^k|=|x|/(|x|,k)$
+
+$x^n x^m=x^{n+m}; (x^n)^m=x^{nm}; x^0=e$ при $n,m \in Z$
+
+$G,x <x>=\{x^n,$ где $n\in Z\}$-циклическая подгруппа группы $G$
+
+Если $|x|=n<\infty \rightarrow <x>= \{e,x,x^2, \dots, x^{n-1} \}$
+
+Если $|x|=\infty \rightarrow <x>=\{e,x,x^{-1},x^2, x^{-2}, \dots \}$ 
+
+$<x>_n, $т.е. $|<x>_n|=|x|=n$
+
+$<x>_\infty$ т.е. $|<x>_\infty|=|x|=\infty$ См. семинар для св-в (Кострикин)
+
+$G$-циклическая группа, если $\exists x\in G:G=<x>$
+
+Теорема. У циклической группы все подгруппы циклические, т.е. $G$-циклическая группа.($H<G \rightarrow H$-циклическая группа)
+
+Док-во: Оно было, но его украли
+
+Теорема(Ахтунг, требуется в типовике) $G$-циклическая группа, $|G|=n, n\vdots k \rightarrow \exists ! H<G:|H|=k$
+
+Док-во: to be continued
+
+
+
+
+
+
+
+
+
+\end{document}

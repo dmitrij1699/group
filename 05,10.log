@@ -1,0 +1,393 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.11.19)  19 NOV 2016 11:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**05,10.tex
+(./05,10.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count87
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/09/25 3.9l The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-russian/russianb.ldf
+Language: russianb 2014/10/21 1.3f Russian support for the Babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/09/25 3.9l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 69.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2aenc.def
+File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
+)
+Package babel Info: Making " an active character on input line 111.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen104
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks20
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks21
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count101
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cases/cases.sty
+Package: cases 2002/05/02 ver 2.5 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count102
+))
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen113
+\extrarowheight=\dimen114
+\NC@list=\toks24
+\extratabsurround=\skip46
+\backup@length=\skip47
+)
+\everycr=\toks25
+\minrowclearance=\skip48
+) (./05,10.aux
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
+\openout1 = `05,10.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen115
+\scratchbox=\box28
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen116
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks27
+)
+\c@Th=\count109
+\c@Def=\count110
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 20.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-4.def
+File: uni-4.def 2013/05/13 UCS: Unicode data U+0400..U+04FF
+)
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 28.
+
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+\c@SL0=\count111
+\c@SV0=\count112
+
+Overfull \hbox (81.38586pt too wide) in paragraph at lines 96--97
+[]$\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 G\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = \OM
+L/cmm/m/it/12 p \OMS/cmsy/m/n/12 ^^@ [] ! \OML/cmm/m/it/12 G[]g \OMS/cmsy/m/n/1
+2 6\OT1/cmr/m/n/12 =
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (28.42381pt too wide) in paragraph at lines 106--107
+[]\T2A/cmr/m/it/12 Функция Эйлера-функция,
+ []
+
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 129.
+
+
+Overfull \hbox (15.09302pt too wide) in paragraph at lines 133--144
+[] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 H \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 
+yHy[] \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 y \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 
+H \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 y[]Hy \OMS/cmsy/m/n/12 $ [] $
+ []
+
+[2] [3]
+Overfull \hbox (43.63777pt too wide) in paragraph at lines 220--221
+[]$[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]
+; e[]; e[]; [] ; e[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g ^^@ [][] ^^Q \OML/cmm/m
+/it/12 G[][]$ 
+ []
+
+
+Overfull \hbox (46.25764pt too wide) in paragraph at lines 233--234
+[]$[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ;
+ \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ; [] 
+; \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j ^^@ []j\OT1/cmr/m/n/
+12 (\OML/cmm/m/it/12 g[]g[] [] g[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j \OT1/cmr/
+m/n/12 = \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 jj\OML/cmm/m/it
+/12 g[]\OMS/cmsy/m/n/12 j [] j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j$ 
+ []
+
+
+Overfull \hbox (53.64284pt too wide) in paragraph at lines 235--236
+[]$\OMS/cmsy/m/n/12 e\OML/cmm/m/it/12 G[] \OT1/cmr/m/n/12 =\OML/cmm/m/it/12 < g
+ >[] []\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12
+ ; [] ; \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 g[]\OMS/cmsy/m/n/12 j[] ! \OML/cmm/m
+/it/12 G \OT1/cmr/m/n/12 =\OML/cmm/m/it/12 < \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+g[]; g[]; [] ; g[]\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 >$ 
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
+
+ []
+
+
+Overfull \hbox (164.71016pt too wide) in paragraph at lines 288--289
+[]\T2A/cmr/m/it/12 G изо-морф-но $\OML/cmm/m/it/12 G[] \OMS/cmsy/m/n/12 ^^B \OM
+L/cmm/m/it/12 G[] \OMS/cmsy/m/n/12 ^^B [] ^^B \OML/cmm/m/it/12 G[]\OT1/cmr/m/n/
+12 ([])$ 
+ []
+
+
+Overfull \hbox (60.89865pt too wide) in paragraph at lines 291--297
+\OML/cmm/m/it/12 ^^^[]^^^\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 g[] [] ; g[]\OT1/cm
+r/m/n/12 )(\OML/cmm/m/it/12 h[]; [] ; h[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^
+^^\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]h[]; g[]h[]; [] ; g[]h[]\OT1/cmr/m/n/12 
+) = \OML/cmm/m/it/12 g[]h[]g[]h[] [] g[]h[]$ 
+ []
+
+
+Overfull \hbox (79.87859pt too wide) in paragraph at lines 291--297
+\OML/cmm/m/it/12 ^^^^^^\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 g[] [] ; g[]\OT1/cmr/
+m/n/12 )(\OML/cmm/m/it/12 h[]; [] ; h[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 g[]
+g[] [] g[]h[]h[] [] h[][][] 
+ []
+
+
+Overfull \hbox (2.83043pt too wide) in paragraph at lines 291--297
+\OML/cmm/m/it/12 ^^^[]g \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 G \OMS/cmsy/m/n/12 
+! 9\OML/cmm/m/it/12 g[]; [] g[] \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 g \OT1/cmr/m
+/n/12 = \OML/cmm/m/it/12 g[] [] g[] \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 ^^^\OT1
+/cmr/m/n/12 ((\OML/cmm/m/it/12 g[]; [] ; g[]\OT1/cmr/m/n/12 )) =
+ []
+
+[6]
+Overfull \hbox (34.28282pt too wide) in paragraph at lines 332--333
+[]\T2A/cmr/m/n/12 G-внутреннее пря-мое про-из-ве-де-ние, ес-ли вы-пол-не-на (*)
+ ($\OMS/cmsy/m/n/12 $ []$\T2A/cmr/m/n/12 ) 
+ []
+
+
+Overfull \hbox (20.2483pt too wide) in paragraph at lines 338--353
+\OMS/cmsy/m/n/12 e\OML/cmm/m/it/12 z \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]u[] 
+\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]u[] \OMS/cmsy/m/n/12 !\OT1/cmr/m/n/12 ? [
+]  \OML/cmm/m/it/12 x[]x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 u[]u[] \OMS/cmsy/
+m/n/12 ! [] !
+ []
+
+[7]
+Overfull \hbox (86.491pt too wide) in paragraph at lines 377--385
+\OML/cmm/m/it/12 S[] ^^^[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 G \OMS/cmsy/m/n/1
+2 ! \OML/cmm/m/it/12 G g[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 G ^^^[]\OT1/cmr/
+m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 g^^U$  $[]$ 
+ []
+
+[8] (./05,10.aux) ) 
+Here is how much of TeX's memory you used:
+ 4325 strings out of 493105
+ 52798 string characters out of 6137071
+ 222499 words of memory out of 5000000
+ 7721 multiletter control sequences out of 15000+600000
+ 15553 words of font info for 48 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,10n,26p,332b,571s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/dmitrij/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/lati120
+0.600pk> </home/dmitrij/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1200.600pk> </
+home/dmitrij/.texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200.600pk></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/wasy/wasy10.pfb>
+Output written on 05,10.pdf (8 pages, 173272 bytes).
+PDF statistics:
+ 273 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

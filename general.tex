@@ -1,0 +1,769 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{cases}
+\usepackage{ wasysym }
+\usepackage[usenames]{color}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{mathrsfs}
+\long\def\/*#1*/{} %magic for multi-line comments
+\righthyphenmin=2
+\definecolor{linkcolor}{HTML}{FF0000}
+\definecolor{urlcolor}{HTML}{FF0000}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+\begin{document}
+	\tableofcontents
+	\newpage
+	\part{3 семестр. Основы теории групп.}
+		\section{Основные классы алгебраических систем}
+		\hypertarget{indef:gruppoid}{\textbf{Группоид}}= множество+\hyperref[def:bin_oper]{бинарная операция} \\
+		\hypertarget{indef:halfgroup}{\textbf{Полугруппа}}= Группоид+свойство ассоциативности ($(x*y)*z=x*(y*z)$) \\
+		\hypertarget{indef:monoid}{\textbf{Моноид}} = Полугруппа + нейтральный элемент ($(e*x=x*e=x) ; (0+x=x+0=x)$) \\
+		\section{Группа}
+		\hypertarget{indef:group}{\textbf{Группа}} = Моноид + существование обратного элемента (противоположный) \\
+		\hypertarget{inpro:group}{\textbf{Свойства групп:}}\begin{enumerate}
+			\item Единственность нейтрального элемента
+			\item Единственность обратного элемента
+			\item $(x*y)^{-1}=y^{-1}*x^{-1}$
+			\item $(x^{-1})^n=(x^n)^{-1} , n \in \mathds{N}$
+			\item $x^n*x^m=x^{n+m} n,m \in \mathds{Z} $ 
+			\item Уравнение $ax=b$ имеет единственное решение $x=a^{-1}b$ 
+			$(xa=b\Rightarrow x=ba^{-1})$
+			\item $xy=e \Rightarrow y=x^{-1} $\\
+		\end{enumerate}
+		Коммутативная группа = абелева группа (группа, в которой выполняется свойство коммутативности $\forall x, y \in \mathds{G} \Rightarrow xy=yx$)\\
+		\hypertarget{indef:por_group}{\textbf{Порядок группы}} ($|\mathds{G}|$) -число элементов в группе\\
+		\hypertarget{indef:por_el}{\textbf{Порядок элемента}} ($|x|)= min \{ n\in\mathds{N} :x^n=e\}$ (т.е. минимальная натуральная степень, в которую нужно возвести элемент, что бы он превратился в "единицу") \\
+		
+		\newpage
+		\section{Подгруппа}
+		
+		$\mathds{H} \le \mathds{G}$;
+		$\mathds{G}:\mathds{H}$ является группой относительно той же операции. (Подмножество H группы G называется \hypertarget{indef_subgroup}{\textbf{подгруппой}} этой группы, если оно само является группой относительно той же операции)
+		
+		Тривиальные подгруппы- это $e$ и $\mathds{G}$
+		
+		Если $\mathds{H}\le \mathds{G}$ и $\mathds{H} \not= \mathds{G}$, то будем писать $\mathds{H}<\mathds{G}$.
+		
+		\hypertarget{th:subgrop_e}{\textbf{T. о равенстве единичных элементов в группе и подгруппе}} $H<G \Rightarrow e_H=e_G$
+		
+		\textbf{Док-во:} $h \in \mathds{H} \rightarrow he_H=h ; he_G=h \Rightarrow  e_Gg^{-1}he_H=h^{-1}h=e_Ge_H \Rightarrow e_H=e_G $
+		
+		\hypertarget{th:subgroup_-1}{\textbf{Т. о равенстве обратных элементов}} $H<G, h \in H \Rightarrow h_H^{-1}=h_G^{-1}$
+		
+		\hypertarget{th_subgroup_cri}{\textbf{Критерий подгруппы:}} $ \daleth  H<G$ и $H<G \Leftrightarrow $ 
+		\begin{equation*}
+		\begin{cases}
+		H \not= \varnothing 
+		\\
+		x \in H
+		\\
+		y \in H
+		\end{cases}
+		\end{equation*} , то $xy=H$ 
+		
+		$\daleth G$ -конечная группа 
+		
+		Пусть $H<G  \Rightarrow$ 
+		\begin{equation*}
+		\begin{cases}
+		H \not= \varnothing  
+		\\
+		x,y \in H, xy \in H
+		\end{cases}
+		\end{equation*}
+		
+		$x\in H \Rightarrow x^k <H, \forall k \in N$, т.к. $|G|<\infty\Rightarrow E l,m : x^l=x^m\Rightarrow x^{l-m}\Rightarrow =e \Rightarrow e \in H$
+		
+		
+		Если $G$- коммутативная группа, то $xH=Hx$, то $G/H=H\textbackslash G$. Можем ввести операцию в $G/H \qquad (xH)(yH)=(xy)H$
+		
+		
+		
+		%Задачи
+		%\begin{enumerate}
+		%	\item 
+		%\end{enumerate}
+		
+		\newpage
+		\section{Отношения эквивалентности и смежные классы и все-все-все}
+		
+		Отношения на множестве $M$:
+		$T \le M*M=\{(a,b):a,b\in M\}$
+		
+		$aTb$-если пара$(a,b)\in T$ 
+		
+		Примеры:
+		\begin{enumerate}
+			\item $T=\varnothing$
+			\item $T=M*M$
+			\item $M=R, aTb \Leftrightarrow a<=b$
+			\item $M=R, aTb \Leftrightarrow b=a^2$
+		\end{enumerate}
+		
+		T называется \hypertarget{indef:equiv}{\textbf{отношением эквивалентности}}, если оно удовлетворяет следующим условиям:
+		\begin{enumerate}
+			\item $aTa$ (рефлексивность)
+			\item $aTb \rightarrow bTa$ (симметричность)
+			\item $aTb, bTc \rightarrow aTc$ (транзитивность)
+		\end{enumerate}
+		
+		Будем иметь ввиду вместо $aTb=a\sim b$, $T_a=\{b\in M:a\sim b\}$
+		
+		Теорема:
+		\begin{enumerate}
+			\item $a\in T_a$
+			\item $\bigcup_{a\in M} T_a=M$
+			\item $T_a \bigcap T_b \not= \varnothing \rightarrow T_a=T_b$
+		\end{enumerate}
+		
+		%Здесь док-во T_a=T_b
+		
+		Итак: M разбито на непересекающиеся подмножества $M\rightarrow M/\sim$ (факторизация)
+		
+		Пример: $H<G x\sim y \leftrightarrow x^{-1}y \in H \leftrightarrow \exists h\in H: x^{-1}y=h\leftrightarrow y=xh, h\in H$; таким образом $T_x=\{y:x\sim y\}=\{y:y=xh\}=xH;$
+		
+		Определение: $xH=\{xh, h\in H\}$
+		
+		$T_x=xH \rightarrow$ \hypertarget{indef:left_class}{\textbf{левым смежным классом}} по подгруппе $H$
+		
+		Аналогично, если $ x\sim y$ ввести по формуле $yx^{-1}\in H\rightarrow T_x=Hx$-\hypertarget{indef:right_class}{\textbf{правый смежный класс}}.
+		
+		
+		
+		
+	
+		
+		$T_a=\{b:a\sim b\} $
+		
+		% %Тут что-то было..
+		
+		Если $(Z,+)$ и $(nZ,+)$, то $a\rightarrow a+nZ$
+		
+		Вместо $a\rightarrow a+nZ$ будем писать $[a]_n$ или $ \bar{a_n}$ или $\bar{a}$ или(like a pro) $a$
+		
+		$Z/_{\sim}=Z/_{nZ}=Z_n$
+		
+		Кольцо$(A,*,+)$
+		$\bigoplus$-коммутативность
+		$\bigodot$-дистрибутивность
+		
+		Бывают кольца коммутативные$(ab=ba)$ и с единицей$(ea=ae=a)$
+		
+		Подкольцо-это кольцо относительно тех же операций
+		
+		Поле-коммутативное ассоциативное кольцо с единицей $e\not= 0$.Кроме того, $\forall x\not=0 \exists x^{-1} (xx^{-1}=x^{-1}x=e)$
+		
+		$[a]_n+[b]_n=[a+b]_n$ и $[a]_n [b]_n=[ab]_n$
+		
+		\textbf{Пара необходимых теорем о отношениях эквивалентности:}
+		\begin{enumerate}
+					
+		
+		\item $	\left
+			.\begin{aligned}
+			a\sim a^\prime \\
+			b\sim b^\prime
+			\end{aligned}
+			\right \} $
+			$\rightarrow$
+			$\begin{cases}
+			[a^\prime +b^\prime]=[a+b] \\
+			[a^\prime b^\prime]=[ab]
+			\end{cases}$\\
+		$\LHD a^\prime =a+nl; b^\prime=b+nk \\
+		a^\prime+b^\prime=a+b+n(l+k)\rightarrow [a^\prime+b^\prime]=[a+b] \\
+		a^\prime b^\prime=ab+n(ak+bl+nlk)\rightarrow [a^\prime b^\prime]=[ab]
+		\RHD$
+		
+		\item $H<G,\cdot$
+		
+		
+			$|T_x|=|T_z|=|H|$
+		
+		
+		$\LHD xh_1=xh_2 \rightarrow h_1=h_2 \RHD$
+		\end{enumerate}
+		
+		$\begin{aligned}
+		H<G \quad x\sim y & \quad x^{-1}y\in H \leftrightarrow y\in xH \text{(\textbf{Левый смежный класс})} \\
+		& \quad yx^{-1}\in H \leftrightarrow y\in Hx \text{(\textbf{Правый смежный класс})}
+		\end{aligned} $
+				
+		Если $G$-коммутативна, то $xH=Hx$
+				
+		Множество левых смежных классов обозначается $G\diagup H $
+				
+		Множество правых смежных классов обозначается $H\diagdown G$ 
+		
+		$|G\diagup H|=|H\diagdown G|=$индекс подгруппы
+		
+		\hypertarget{th:t_lang}{\textbf{Теорема Лагранжа}} 
+				Если $|G|=n<\infty \rightarrow |G|\vdots |H| \text{, что равносильно определению } |G|=|H|\cdot |_G\diagup^H| 
+				\text{где группа }G\text{-конечная группа}	 $ 
+			
+			
+		\hypertarget{sl:t_lang}{\textbf{Следствия из теоремы Лагранжа:}}\begin{enumerate} 
+			\item$|G|\vdots |x|$
+	
+			$\LHD x\Rightarrow H=<x>, |H|=|x|
+			\RHD$
+			
+			
+			
+			\item	$|H| \, \Big{|}\, |G|$
+			
+			
+			\item	$x \in G \rightarrow |x| \, \Big| \, |G| $
+			
+			
+			\item	$|G|=p -\text{простое число}\rightarrow G \text{циклическая группа, причем если} g\not= e \rightarrow G=<g>$
+			
+			
+			\item	$|G|=n\\
+				g\in G\rightarrow g^n=e$
+			
+			\item[Малая теорема Ферма 6.]
+				$a^p \equiv a(mod\, p)$
+			
+			\item[Функция Эйлера 7.]
+				Функция Эйлера $(\phi (n))$-функция, равная количеству натуральных чисел, меньших и взаимно простых с ним.
+				
+			\item[Т. Вильсона 8.]
+				$(p-1)!+1\,\vdots \,p \leftrightarrow p-\text{простое}$
+		\end{enumerate}	
+						
+			Пусть $H<G \text{, где }G - \forall$
+			
+			Пытаемся ввести операцию $(xH)(yH)=(xy)H$. Когда она корректна?\\
+			Когда $\begin{cases}
+			x \sim x' \\
+			y \sim y'
+			\end{cases} \rightarrow xy \sim x'y'$
+			$xy\sim x'y'=xh_1 yh_2 \\
+			xy=xh_1 yh_2 h_3 \qquad \Big{|} \cdot x^{-1}\\
+			y=h_1yh_4 \\
+			e=y^{-1}h_1 y h_4\\
+			y^{-1}h_1y=h_5 \rightarrow \boxed{ y^{-1}Hy \le H \quad \forall y \in G \textcolor{red}{(1)} }\\
+			\text{Из \textcolor{red}{(1)}} \rightarrow H \le yHy^{1} \quad \forall y \rightarrow H \le y^{-1}Hy \leftrightarrow \boxed{ y^{-1}Hy=H \quad \forall y\in G \textcolor{red}{(2)}  } \leftrightarrow \boxed{ Hy=yH \quad \forall y\in G \textcolor{red}{(3)} }$
+			
+			
+			$H<G$ называется \hypertarget{indef:norm_gr}{\textbf{нормальной}}, если выполнено любое из \textcolor{red}{3} равносильных условий. \\
+			В этом случае пишут $H\lhd G $\\		
+			$\rceil H\lhd \rightarrow G/H$-группа относительно $(xH)(yH)=xyH$\\
+			Группа $G/H$ называется \hypertarget{indef:fact_gr}{\textbf{фактор-группой}} группы $G$ по нормальной подгруппе $H$.
+			
+		
+		
+			\hypertarget{indef:morfizm}{\textbf{Гомоморфизм}} $\phi:G_1 \rightarrow G_2$ -если $\phi(xy)=\phi(x)\phi(y)$
+			
+			\textbf{Мономорфизм} = инъективный гоморфизм
+			
+			\textbf{Эпиморфизм} = сюръективный гомомрфизм.
+			
+			\textbf{Эндоморфизм} - если $G_1=G_2$
+			
+			\textbf{Автоморфизм} - изоморфизм+эндоморфизм
+			
+			$Ker\phi =\{x\in G_1 :\phi (x)=e_2\} \qquad (=\phi ^{-1}(e_2))$ -Ядро гомоморфизма
+			
+			$Im\phi =\{z\in G_2 ; \exists x\in G_1:\phi (x)=z\}=\{\phi (x), x\in G_1\}=\phi (G_1)$-Образ гоморфизма
+			
+			\hypertarget{inpro:gom}{\textbf{Свойства гомоморфизма:}}
+				\begin{enumerate}
+					\item $\phi (e_1)=e_2 \qquad \text{или } e_G \rightarrow e_H$
+					\item $\phi (x^{-1})=(\phi (x))^{-1} \qquad \text{или } x\rightarrow y  \text{ то } x^{-1}\rightarrow y^{-1}$
+					\item $| \phi (x)|\, \big{|} \, |x|$
+					\item $Im\phi < H \qquad Im\phi=\{ \phi (x), x\in G \}$
+					\item $Ker\phi <G  \qquad  Ker \phi=\{ \phi^{-1}(e_H) \}$
+					\item $Ker\phi \lhd G$
+					\item $\phi (x_1)=\phi (x_2) \leftrightarrow x_1 \equiv x_2 (mod \, Ker\phi) $
+					\item $\phi- \text{мономорфизм}\leftrightarrow Ker \phi =\{e\} $
+					\item $\phi :G \rightarrow H, \psi :H\rightarrow K -\text{гоморфизм} \rightarrow \psi \cdot \phi : G \rightarrow K - \text{гоморфизм}$
+					\item $\phi :G\rightarrow H-\text{изомрфизм} \rightarrow \phi^{-1}-\text{изомрфизм} $
+					\item $\phi \text{-изоморфизм, то } |\phi (x)|=|x|$
+				\end{enumerate}
+				
+			Док-во 6-го св-ва:$\rceil x_1, x_2 \in Ker\phi \rightarrow x_1 x_2 \in Ker\phi \\
+			\phi (x_1)=e \\
+			\phi (x_2)=e \\
+			\phi (x_1x_2)=\phi (x_1) \phi (x_2)=e\cdot e=e$
+			
+			%Док-во ?-го св-ва:$\phi(e_G)=e_H\rightarrow e_G \in Ker\phi\\
+			%\rceil x\in Ker\phi \rightarrow x^{-1}\in Ker\phi\\
+			%\phi(x)=e\\
+			%\phi(x^{-1})=\phi(x)^{-1}=e^{-1}=e \rightarrow Ker\phi <G \\
+			%\rceil k\in Ker\phi \rightarrow %\phi(x^{-1}kx)=\phi(x^{-1})\phi(k)\phi(x)=\phi(x)^{-1}e\phi(x)=e \rightarrow \\
+			%x^{-1}kx \in Ker\phi $
+			
+		% % % % % % % % % % % %
+		
+		%$\mathds{Z},n\mathds{Z}\rightarrow %\frac{\mathds{Z}}{n\mathds{Z}}=\mathds{Z}_n=\{\bar{0},\bar{1},\bar{2},\bar %{3}, \dots , \bar{n-1}\}$- кольцо остатсков при делении на $n$
+		
+		\newtheorem{Th}{Теорема}
+		\newtheorem{Def}{Определение}
+		
+
+		
+		
+		
+		% % % % % % % % % % % %
+		
+		
+		
+		
+		\newpage
+		\section{Циклические группы}
+				\hypertarget{indef:circle_group}{\textbf{Циклическая группа}} $\mathds{G}$ -если $ \exists a \in \mathds{G} : \mathds{G}=\{a^k, k \in \mathds{Z} \}$ (можно так же сказать, что циклическая подгруппа состоит из всех степеней элемента) \\
+				Циклическая группа называется \hypertarget{indef:inf_circle_group}{\textbf{конечной}}, если $|\mathds{G}|<\infty; |\mathds{G}|=n \Rightarrow \mathds{G}=\{e,a,a^2, \dots , a^{n-1} \}, a^n=e$\\
+				Циклическая группа называется \hypertarget{indef:noninf_circle_gtoup}{\textbf{бесконечной}}, если $|\mathds{G}|= \infty \Rightarrow \mathds{G}=\{ e,a,a^{-1},a^2,a^{-2}, \dots, a^k, a^{-k}, \dots \}$\\
+				\hypertarget{f:circle}{\textbf{Необходимые формулы и утверждения о циклических группах}}:
+				\begin{enumerate}
+					\item $|x^k|=\frac{|x|}{(|x|,k)}$
+					\item $x^n x^m=x^{n+m}; (x^n)^m=x^{nm}; x^0=e$ при $n,m \in \mathds{Z}$
+					\item$G,x \quad <x>=\{x^n,\text{ где } n\in Z\}$-циклическая подгруппа группы $G$
+					
+				\end{enumerate} 
+					
+					Если $|x|=n<\infty \rightarrow <x>= \{e,x,x^2, \dots, x^{n-1} \}$
+					
+					Если $|x|=\infty \rightarrow <x>=\{e,x,x^{-1},x^2, x^{-2}, \dots \}$ 
+					
+					$<x>_n, $т.е. $|<x>_n|=|x|=n$
+					
+					$<x>_\infty$ т.е. $|<x>_\infty|=|x|=\infty$ См. семинар для св-в (Кострикин)
+					
+					$G$-циклическая группа, если $\exists x\in \mathds{G}:\mathds{G}=<x>$
+					
+					\hypertarget{th}{\textbf{Теоремы о циклических группах:}}
+					
+					\textbf{Теорема.} У циклической группы все подгруппы циклические, т.е. $G$-циклическая группа.($H<G \Rightarrow H$-циклическая группа)
+					
+					%Док-во: Оно было, но его украли
+					
+					\textbf{Теорема.} $G$-циклическая группа, пусть $|\mathds{G}|=n \text{и } n\vdots k \Rightarrow \exists ! H<G:|H|=k$
+		
+		
+							%$\mathds{Z},n\mathds{Z}\rightarrow %\frac{\mathds{Z}}{n\mathds{Z}}=\mathds{Z}_n=\{\bar{0},\bar{1},\bar{2},\bar %{3}, \dots , \bar{n-1}\}$- кольцо остатсков при делении на $n$
+		
+					\begin{Th}
+						$\mathds{Z}_n$-поле $\leftrightarrow n$-простое 
+					\end{Th}
+										
+					\begin{Th}
+						$\mathds{Z}_n \quad k-$обратим в $\mathds{Z}_n \leftrightarrow n$ и $k$-взаимно просты $\bigl\{ (n,k) =1 \bigr\} $
+					\end{Th}
+					
+				$\phi :G_1 \rightarrow G_2$ называется изоморфизмом, если 
+				$\begin{cases}
+				\phi(gh)=\phi(g)\phi(h) \\
+				\phi$-биекция$
+				\end{cases} $
+						
+				\begin{Th}
+					$\daleth G=<x>,\cdot$ \\
+						-Если $|G|=\infty \Rightarrow G\cong \mathds{Z},+  \quad(\mathds{Z}=<1>)(G_1\cong G_2)$, то группы называются изоморфными.\\
+						-Если $|G|=n<\infty \Rightarrow G\cong \mathds{Z}_n,+$
+				\end{Th}
+		
+		\newpage
+		\section{Подстановки}
+		
+			\hypertarget{el}{\textbf{Функция Эйлера}}$\bigl\{\varphi (n) \bigr\} $ равна количеству натуральных чисел, меньших чем $n$ и взаимно простых с $n$.\\
+			\textbf{Теорема Эйлера} $a^{\phi(n)} \equiv 1(mod \, n) $\\
+			\textbf{Свойства $\varphi(n)$:} \begin{enumerate}
+				\item	$\phi(p)=p-1, p-\text{простое}$
+				\item	$\phi(p^n)=p^n-p^{n-1}, p-\text{простое}$
+				\item	$\phi(mn)=\phi(m)\phi(n), \qquad (m,n)=1$	
+			\end{enumerate}
+			$S_n$-группа подстановок(так же называют симметричной группой) \\
+			$x=\{1,2,3, \dots , n\}$, $S_n$-мн-во биективных функций $\varphi :X\rightarrow X$ \\
+			$\varphi= \begin{pmatrix}
+			1 & 2 & 3 & 4 & \dots & n \\
+			\varphi(1) & \varphi(2) & \varphi(3) & \varphi(4) & \dots & \varphi(n)
+			\end{pmatrix}$
+	
+		
+		\textbf{Примеры:} $\varphi=\begin{pmatrix}
+		1 & 2 & 3 & 4 \\
+		2 & 4 & 3 & 1
+		\end{pmatrix}$
+		
+		$ \varphi(1)=2 , \varphi(2)=4, \varphi(3)=3, \varphi(4)=1$
+		
+		$\phi=\begin{pmatrix}
+		1 & 2 & 3 & 4 \\
+		4 & 2 & 1 & 3
+		\end{pmatrix}$
+		
+		$(\varphi\phi)(1)=\varphi(\phi(1))=\varphi(4)=1$
+		
+		$\varphi^{-1}\varphi=\varphi\varphi^{-1}=e$
+		
+		$e=\begin{pmatrix}
+		1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4
+		\end{pmatrix}$
+		
+		$\varphi^{-1}=\begin{pmatrix}
+		2 & 4 & 3 & 1 \\
+		1 & 2 & 3 & 3
+		\end{pmatrix}=\begin{pmatrix}
+		1 & 2 & 3 & 3 \\
+		4 & 1 & 3 & 2 
+		\end{pmatrix}$
+		
+		$S_n$-группа  $\qquad |S_n|=n!$
+		
+		\textbf{Цикл}
+		
+		$\varphi=\begin{pmatrix}
+		1 & 2 & 3 & 4 \\
+		2 & 4 & 3 & 1
+		\end{pmatrix}=(124)(3)=(3)(124)$
+		
+		$\phi=\begin{pmatrix}
+		1 & 2 & 3 & 4 \\
+		2 & 1 & 4 & 3
+		\end{pmatrix}=(12)(34)=(34)(12)$
+		
+		\hypertarget{def:while}{\textbf{Независимые циклы}}-называются такие циклы циклы,у которых числа входят в один цикл, но не входят во второй цикл.\\
+		Циклом длины два называется \textbf{транспозиция.}
+		
+		\hypertarget{th:while}{\textbf{Теоремы:}}\begin{enumerate}
+		
+		
+			\item Независимые циклы коммутируют друг с другом (или $\alpha ,\beta$-независимые циклы $\rightarrow \alpha\beta=\beta\alpha$ )
+			
+		
+		
+			\item Если $\alpha=(i_1,i_2, \dots ,i_k)$-цикл длины $k \rightarrow |\alpha|=k$
+		
+		
+			\item Пусть $\varphi=\alpha_1\alpha_2\dots\alpha_n$- произведение независимых циклов.\\
+			$\alpha_1=(i_1,i_2,\dots, i_k)$\\
+			$\alpha_2=(j_1,j_2,\dots, j_l) \rightarrow |\varphi|=$НОК$(|\alpha_1|,|\alpha_2|,\dots,|\alpha_m|)$
+		
+		
+		\end{enumerate}
+		
+		\begin{Th}
+			$|G|=\text{НОК}(k_1,k_2, \dots ,k_m)$
+		\end{Th}
+		
+		Инверсия $ij$-если $i>j$, но $i$ левее $j$
+		
+		Подстановка $G=\begin{pmatrix}
+		l_1 & l_2 & \dots & l_n \\
+		j_1 & j_2 & \dots & j_n
+		\end{pmatrix}$ называется четной, если сумма инверсий в верхней и нижней строках четная. Иначе- нечетная.
+		
+		Знак подстановки $sgnG=(-1)^{[l_1l_2\dots l_n]+[k_1k_2\dots k_n]}$
+		
+		$\begin{aligned} 
+		G  &\text{-четная, если}  sgnG=1\\
+		&\text{-нечетная, если}  sgnG=-1
+		\end{aligned}$
+		
+		$|\alpha|=k\rightarrow sgn\alpha=(-1)^{k-1} \quad (=(-1)^{k+1})$
+		
+		$\alpha=(ij)=\begin{pmatrix}
+		1 & 2 & \dots & i & \dots & j & \dots & n \\
+		1 & 2 & \dots & j & \dots & i & \dots & n 
+		\end{pmatrix}$-нечет
+		
+		\begin{Th}
+			$G=\alpha_1 \alpha_2 \cdot \dots \cdot \alpha_n$-произведение независимых циклов.\\
+			$sgnG=(-1)^{n-m} \quad (=(-1)^{n+m})$
+		\end{Th}
+		
+		
+		
+		\newpage
+		\section{Прямое произведение}
+		
+			\begin{Def}
+				\textbf{Прямое произведение групп} \\
+				$G_1, G_2, \dots , G_n - \text{группы} \, (\cdot) \quad G=G_1\times G_2 \times \dots \times G_n=\{ (g_1,g_2, \dots , g_n):g_i\in G_i, i=1, \dots , n  \}$ \\
+				Введем операцию $(g_1,g_2, \dots , g_n) \cdot (g_1',g_2', \dots , g_n')=(g_1 g_1', g_2, g_2', \dots, g_n g_n') $
+			\end{Def}
+			%\begin{Th}[G-группа]
+				%$\lhd ()             
+			%\end{Th}
+			
+			%Св-ва прямого произведения:\begin{enumerate}
+			%	\item $\tilde{G}_1 =\{ (g_1, e_2, e_3, \dots , e_n) \} -\text{подгруппа, причем } \tilde{G_1}\cong G_1 \quad G_1\times \{e_2\} \times \{e_3\} \times \dots \times \{e_n\} \quad \varphi(g_1)=(g_1, e_2, \dots, e_n) \text{-изом.} \quad \varphi_1(g_1g`)=(g_1g`,e_2, \dots, e_n)=(g_1,e_2, \dots, e_n)(g`,e_2, \dots, e_n)=\varphi_1(g_1)\varphi_1(g_1`)  $
+				
+			%	Аналогично $G\tilde{G_2}=\{ (e_1,g_2,e_3, \dots , e_n) \} \equiv G_2, \dots , \tilde{G_2}\equiv G_n$
+				
+			%	\item $\rceil |G|=m_1, \dots \qquad |G_n|=m_n \rightarrow |G|=m_1 \cdot m_2 \cdot \dots \cdot m_n$ 
+				
+			%	\item $ \tilde{G_i} \lhd G \\
+			%	(g_1, g_2, \dots , g_n)^{-1} (e_1, e_2, \dots, e_{i-1}, g_i', e_{i+1}, \dots, e_n )(g_1, g_2, \dots ,g_n)= \\
+			%	(g_1^{-1} e_1 g_1, g_2^{-1} e_2 g_2, \dots , g_{i-1}^{-1} e_{i-1} g_{i-1}, g_i^{-1}e_i g_i,  g_{i+1}^{-1}e_{i+1} g_{i+1}, \dots , g_n^{-1}e_n, g_n  )\\
+			%	\in \tilde{G_1}\rightarrow \tilde{G_i} \lhd G $
+				
+			%	\item $\rceil |g|=k_i \rightarrow |(g_1,g_2,\dots , g_n )|=\text{НОК}(|g_1|, |g_2|, \dots , |g_n)  $
+				
+			%	\item $\text{Если } |g_1|,|g_2|, \dots, |g_n|-\text{нет общих делителей, то} |(g_1g_2 \dots g_n)|=|g_1||g_2|\dots |g_n|  $
+				
+			%	\item $\rceil G_i=<g>_{k_i} \text{ и у } |g_1|, \dots , |g_n| \text{нет общих делителей }\rightarrow G=< (g_1, g_2, \dots, g_n) > $
+		
+		
+		%\end{enumerate}
+		
+		\hypertarget{def:out_comp}{\textbf{Внешнее прямое произведение:}} $G=G_1 \times G_2 \times \dots \; (\cdot) \qquad G=G_1\oplus G_2 \oplus G_3 \oplus \dots \oplus G_n \; (+)$
+		
+		%$G=\{ (g_1, g_2, g_3 \dots g_n) \}$-операция покоординатна
+		
+		\hypertarget{inpro:out_comp}{\textbf{Свойства внешнего прямого произведения:}}
+		\begin{enumerate}
+			\item G-группа
+			\item $\tilde{G_i}=\{ (e_1, e_2, \dots , e_{i-1}, g_i, e_{i+1}, \dots, e_n)<G \} \qquad 
+			=\{e_1 \}\times \{e_2\} \times \dots \times \{e_{i-1}\} \times G_i \times \{e_{i+1}\}\dots \{e_n\}$
+			\item $\tilde{G_1} \cong G_i \quad (\phi_i :G_i \rightarrow \tilde{G_i} \; \phi_i(g_i))=(e_1, e_2, \dots, e_{i-1}, g_i, e_{i+1}, \dots e_n)- \text{Изоморфизм} $
+			\item $\tilde{G_i} \lhd G$
+			
+			\item $\forall g \in G \, \exists \tilde{g_1}\in \tilde{G_1}, \dots , \, \tilde{g_n}\in \tilde{G_n}: g=\tilde{g_1} \tilde{g_2} \tilde{g_3} \dots \tilde{g_n} $	
+			\item $\forall g\in G \exists! \tilde{g_1}\in \tilde{G_1}, \dots , \, \tilde{g_n} \in \tilde{G_n}: g=\tilde{g_1} \tilde{g_2} \tilde{g_3} \dots \tilde{g_n} $
+			\item $\tilde{G_i} \cap \tilde{G_j}=\{e\} \quad (i\not= j)  $
+			\item $\tilde{g_1}\in \tilde{G_i}, \tilde{g_j}\in \tilde{G_j} \rightarrow \tilde{g_i}\tilde{g_j}\rightarrow \tilde{g_j}\tilde{g_i}$  
+			%\lhd  \tilde{g_i}\tilde{g_j}=(e_1, \dots, g_i, \dots , e_n)(e_1 , \dots , g_j) \text{оно было}$
+			\item $|G|=|G_1||G_2|\dots |G_n|$
+			\item $|(g_1,g_2, \dots ,g_n)|=\text{НОК}(|g_1|,|g_2|, \dots , |g_n|)  $
+			\item $\rceil G_1=<g_1>_{k_1}, \dots ,G_n=<g_n>_{k_n}  \qquad \text{G-циклическая группа} \Leftrightarrow \text{у} k_1, \dots , k_n \text{нет общих делителей} \quad \lhd \text{на дом} \rhd$\\
+			Пример: $C_2 \times C_3 \cong C_6 \, (\cdot) $\\
+			$\mathds{Z}_2 \oplus \mathds{Z}_3 \cong \mathds{Z}_6 \, (+)$ 
+		\end{enumerate} 
+		\begin{Th}
+			$G, \, G_1, G_2, \dots , G_n < G$
+		\end{Th}
+		\begin{enumerate}
+			\item $(6\Rightarrow 5)  $
+			\item $6 \Rightarrow 7, \text{то если} \forall g\in G \exists ! g_1 \in G_1 , \dots , g_n\in G_n: g=g_1 g_2 \dots g_n  \Rightarrow G_i \cap G_j = \{e\} \quad (i\not= j)\\
+			\lhd \text{От противного. Пусть } g \in G_i \cap G_j \Rightarrow \, g=ee \dots g \dots e \dots e = ee \dots e \dots g \dots e \Rightarrow g=e \Rightarrow G_i \cap G_j=\{e\} \rhd$
+			\item $\begin{aligned}4\\ 7\end{aligned}  \} \Rightarrow 8 \quad \text{т.е. если } \, G_i \lhd G_j \quad   G_j\lhd G_i, G_i \cap G_j= \{e\}  \Rightarrow g_i g_j=g_j g_i (\Leftrightarrow g_i g_j g_i^{-1} g_j^{-1}=e ) $
+		\end{enumerate}
+		
+		\begin{Def}
+			\hypertarget{def:incomp}{\textbf{Внутренне прямое произведение:}} \\
+			$G, \quad G_i, \dots , G_n <G \\
+			G-\text{внутренне прямое произведение этих подгрупп, если} $\\
+			\begin{enumerate}
+				\item $\forall g\in G \exists !g_1,\dots, g_n : g=g_1g_2 \dots g_n$ 
+				\item $G_i \lhd G_i; i=1, \dots n  $
+			\end{enumerate}
+		\end{Def}	
+		
+		
+		\textbf{Теорема}	G изоморфно $G_1 \times G_2 \times \dots \times G_n\\ (\text{т.е. внутреннее прямое произведние изоморфно внешнему})$
+		
+		$\lhd  \phi : G_1 \times \dots \times G_n \rightarrow G $ \\
+		$\phi(( g_1,g_2, \dots , g_n ))=g_1 g_2 \dots g_n$ \\
+		$\phi \text{-гомоморфизм ?} \phi(( g_1 \dots , g_n )( h_1, \dots, h_n )=\phi (g_1 h_1, g_2 h_2, \dots , g_n h_n) = \\g_1 h_1 g_2 h_2 \dots g_n h_n $\\
+		$\phi  \phi(( g_1 \dots , g_n )( h_1, \dots, h_n )=g_1 g_2 \dots g_n h_1 h_2 \dots h_n $Сие выра\-же\-ние вы\-хо\-дит из преды\-ду\-щей строки бла\-го\-даря свойству 8
+		
+		$\phi \text{-эпиморфизм. Пусть} g\in G \rightarrow \exists g_1, \dots g_n: g=g_1 \dots g_n \rightarrow \phi((g_1, \dots , g_n))=g_1 \dots g_n=g$ \\
+		$\phi \text{-мономорфизм} \quad Ker\phi= \{( (g_1, \dots, g_n):g_1g_2 \dots g_n=e )\} \rightarrow g_1=g_2=\dots=g_n=e $ 
+		
+		%$G=G_1 \times G_2 \times \dots \times G_n$-внешнее прямое произведение групп
+		
+		%\begin{enumerate}
+		%	\item $G-\text{это группа}$
+		%	\item $\tilde{G_i} \lhd G$
+		%	\item $\tilde{g_i} \tilde{g_j}=\tilde{g_j} \tilde{g_i} $
+		%	\item $ \forall g=\tilde{g_1}\tilde{g_2} \dots \tilde{g_n} $
+		%	\item $  \forall g!=\tilde{g_1}\tilde{g_2} \dots \tilde{g_n} $
+		%	\item $  \tilde{G_i} \cap \tilde{G_j}=\{e\} \quad (i\not= j)  $
+		%	\item $|G| < \infty \rightarrow |G| =|G_1||G_2| \dots |G_n|$
+		%\end{enumerate}
+		
+		%Внутреннее прямое произведение  $G, G_1, \dots ,G_n <G$
+		
+		\begin{Th}
+			$* * \begin{cases}
+			\forall g!=g_1 \dots g_n \quad(1)\\
+			g_i g_j=g_j g_i  \qquad(2)
+			\end{cases}\Leftrightarrow * \begin{cases}
+			\forall g!=g_1 \dots g_n \quad (1)\\
+			G_i \lhd G \qquad (2)
+			\end{cases}  \\
+			\text{ где} g_i\text{-элемент i-ой группы, а} g_j \text{-элемент j-ой группы}$
+		\end{Th}
+		$\lhd \rightarrow (1)** \rightarrow (1)* \\
+		(1)**\rightarrow G_i \cap G_j=\{e\} \qquad \rceil g\in G_i \cap G_j \rightarrow g=e \cdot e  \dots e \cdot g \cdot e  \dots e = e \dots e g e \dots e \rightarrow g=e \\
+		gg_ig^{-1}=g_1`g_2` \dots g_n`g_i` (g_n`)^{-1} \dots (g_1`)^{-1}  =g_i` g_i (g_1`)^{-1} \in G_i \rightarrow G_i \lhd G \rhd$ \\
+		$\lhd  \leftarrow (1)*\rightarrow (1)** \rightarrow G_i \cap G_j=\{e\} \qquad G_i \lhd G\\
+		\text{Требуется доказать:} g_i g_j=g_j g_i, \text{т.е.} g_i g_j g_i^{-1} g_j^{-1}=e   $
+		%ЗДЕСЬ Я ПРОПУСТИЛ
+		
+		G-внутреннее прямое произведение, если выполнена (*) ($ \Leftrightarrow \text{Выполнена (**)} $)
+		
+		Примеры: \begin{enumerate}
+			\item $G=\mathds{Z},+ \qquad \text{не раскладывается в внутренние прямые суммы} \\
+			G_n= n \mathds{Z} \text{-других подгупп нет} \qquad $	На дом: продумать и записать доказательство. \\
+			$nm\in n\mathds{Z} \cap m \mathds{Z} \rightarrow n \mathds{Z}\cap m \mathds{Z} \not= \{0\} $
+			\item $G=\mathds{C}^*,\cdot \\
+			G_1=\mathds{R}_{>0}=\{x>0, x\in R\}\\
+			G_2=U=\mathds{T}=\{z:|z|=1\}=\{z=e^{i\phi}\} \\
+			G=G_1 \times G_2 ? \quad \text{G-коммутативна} \\
+			z\in G \rightarrow z=|z|e^{i\phi} \qquad (|z|>0 \quad e^{i\phi \in U}) \\
+			\rceil z=x_1 u_1=x_2 u_2 \rightarrow ? \begin{cases}
+			x_1=x_2 \\
+			u_2=u_2
+			\end{cases}  \qquad x_1x^{-1}_2=u^{-1}_1u_2\rightarrow \begin{cases}
+			x_1 x_2^{-1}=1 \\
+			u_1^{-1} u_2=1
+			\end{cases} \rightarrow \begin{cases}
+			x_1=x_2 \\
+			u_2=u_2
+			\end{cases}$
+			
+		\end{enumerate} 	
+		\begin{Th}
+			$(G_1\times G_2 )/G_1 \cong G_2 $
+		\end{Th}
+		
+		$\lhd \quad \phi : G_1 \times G_2 \rightarrow G_2 \\
+		\phi(( g_1 g_2 ))=g_2 \\
+		\phi \text{-гомоморфизм ?  } \quad \phi(( g_1,g_2 )(g_1`,g_2` ))=\phi(( g_1g_1`,g_2 g_2` ))=g_2g_2` \\
+		\phi(( g_1, g_2 )) \cdot \phi(( g_1`, g_2` ))=g_2 g_2` \rightarrow \phi(( g_1,g_2 )( g_1`, g_2` )\\
+		Ker\phi=\{(g_1,g_2):\phi(g_1,g_2)=e  \}\rightarrow Ker\phi =\{ (g_1,e) \}=G_1 \\
+		Im\phi=\{ \phi((g_1,g_2)) \}=\{g_2\}=G_2 \rightarrow G_1\times G_2/G_1\cong G_2$\\
+		Следствия. Если $ G_1\lhd G, G/G_1\not\cong G_2 \rightarrow G \not\cong G_1\times G_2  $
+		
+		\color{red}{ACHTUNG} \color{black} $G/G_1 \cong G_2 \not\rightarrow G=G_1 \times G_2$ 
+		
+		Пример $C_4=\{e,a,a^2,a^3\} \qquad C_2=\{e,a^2\}\lhd C_4 \\
+		C_4/C_2 =C_2 \qquad \text{,но } C_4 \not= C_2\times C_2$
+		
+		
+		\hypertarget{th:keli}{\textbf{т. Кэлли}}
+			$\forall$ конечная группа $G, |G|=n$ изоморфна подгруппе $S_n$
+		
+		
+		$\lhd |G|=n \Rightarrow G=\{g_1,g_2,g_3, \dots , g_n\}  \\
+		S(G)\text{-все биектифные функции на множестве G} \rightarrow S(G)=S_n \quad \phi : G\rightarrow S_n \qquad \phi_g=G \rightarrow G \quad  g\text{-фиксированный элемент}\in G \\ \phi_g(x)=g\lambda $
+		\
+		$\begin{Bmatrix}
+		g_1 & g_2 & \dots & g_n \\
+		\dots \\
+		g_ig_1 & g_i g_2 & \dots & g_i g_n 
+		\end{Bmatrix}$ 
+		
+		
+		
+		
+		% % % % % % % % % %
+		
+		
+
+		
+		
+		
+	
+		
+
+		
+	
+			
+			
+		
+		% % % % % % % % % %
+		
+		
+		
+		
+	\newpage
+		\section{Справочник.}
+			\label{def:bin_oper}
+			
+	\newpage
+		\section{Вопросы к коллоквиуму}
+				\begin{enumerate}
+					\item \hyperlink{indef:gruppoid}{Группоид}
+					\item \hyperlink{indef:halfgroup}{Полугруппа}
+					\item \hyperlink{indef:monoid}{Моноид}
+					\item \hyperlink{indef:group}{Группа}
+					\item \hyperlink{indef:por_group}{Порядок группы(|G|)}
+					\item \hyperlink{indef:kpor_el}{Порядок элемента(|x|)}
+					\item \hyperlink{indef:circle_group}{Циклическая группа}
+					\item \hyperlink{indef_subgroup}{Определение подгруппы}
+					\item Чему равен $|x^k|$? 
+					\item \hyperlink{th_subgroup_cri}{Критерий подгруппы}
+					\item \hyperlink{indef:equiv}{Отношение эквивалентности}
+					\item \hyperlink{indef:left_class}{Левый} и \hyperlink{indef:right_class}{Правый} смежные классы 
+					\item \hyperlink{t_lang}{Теорема Лагранжа}
+					\item Малая теорема Ферма
+					\item \hyperlink{el}{Функция Эйлера}
+					\item \hyperlink{el}{т. Эйлера} 
+					\item т. Вильсона
+					\item \hyperlink{indef:norm_gr}{Нормальность группы} 
+					\item \hyperlink{indef:fact_gr}{Фактор-группа}
+					\item \hyperlink{indef:morfizm}{Автоморфизм}
+					\item AutG 
+					\item Внутренний автоморфизм
+					\item IntG
+					\item \hyperlink{indef:morfizm}{Гомоморфизм}
+					\item \hyperlink{indef:morfizm}{Мономорфизм}
+					\item \hyperlink{indef:morfizm}{Эпиморфизм}
+					\item \hyperlink{indef:morfizm}{Эндоморфизм} 
+					\item \hyperlink{indef:morfizm}{Ядро гомоморфизма}
+					\item \hyperlink{indef:morfizm}{Образ гомоморфизма}
+					\item \hyperlink{def:comp}{Внешнее прямое произведение групп}
+					\item \hyperlink{def:in_comp}{Внутреннее прямое произведение групп}
+					\item \hyperlink{th:keli}{т. Кэли}				
+					\item \hyperlink{el}{Группа подстановок}
+					\item \hyperlink{def:while}{Цикл}
+					\item \hyperlink{def:while}{Независимые циклы}
+					\item \hyperlink{def:while}{Транспозиция}
+					\item Определение полупрямого произведения
+					\item Четность и нечетность подстановки
+					\item Знак подстановки
+					\item Знак произведения подстановок 
+					\item Длина цикла
+					\item Порядок цикла
+					\item Порядок произведения независимых циклов
+				\end{enumerate}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	\/*	\begin{enumerate}
+			\item \hyperlink{indef:gruppoid}{Группоид}, \hyperlink{indef:halfgroup}{Полугруппа}, \hyperlink{indef:monoid}{Моноид}, \hyperlink{indef:group}{Группа}.
+			\item \hyperlink{inpro:group}{Свойства групп}
+			\item \hyperlink{indef:por_group}{Порядок группы(|G|)}, \hyperlink{indef:kpor_el}{Порядок элемента(|x|)}
+			\item \hyperlink{indef:circle_group}{Циклическая группа}, \hyperlink{indef:inf_circle_group}{Конечность} и \hyperlink{indef:noninf_circle_gtoup}{Бесконечность} циклической группы.
+			\item \hyperlink{f:circle}{Необходимые формулы и утверждения о циклической группе}
+			\item \hyperlink{th:circle}{Теоремы и циклической группе}
+			\item \hyperlink{indef_subgroup}{Определение подгруппы}, теоремы о равенствах \hyperlink{th:subgrop_e}{единичных элементов} и \hyperlink{th:subgroup_-1}{обратных элементов}, \hyperlink{th_subgroup_cri}{критерий подгруппы}
+			\item \hyperlink{indef:equiv}{Отношение эквивалентности}
+			\item \hyperlink{indef:left_class}{Левый} и \hyperlink{indef:right_class}{Правый} смежные классы и их \hyperlink{th:class-equiv}{Эквивалентность}
+			\item \hyperlink{t_lang}{Теорема Лагранжа}
+			\item \hyperlink{sl:t_lang}{Следствия из теоремы Лагранжа(в том числе Малая теорема Ферма, функция Эйлера, т. Вильсона)}
+			\item \hyperlink{indef:norm_gr}{Нормальность группы}, \hyperlink{indef:fact_gr}{фактор-группа}
+			\item \hyperlink{indef:morfizm}{Гомоморфизм, мономорфизм, эпиморфизм, эндоморфизм, автоморфизм, ядро и образ гоморфизма.}
+			\item \hyperlink{inpro:gom}{Свойства гомоморфизма}
+			\item \hyperlink{def:comp}{Внешнее прямое произведение групп}
+			\item \hyperlink{inpro:out_comp}{Свойства внешнего произведения групп}
+			\item \hyperlink{def:in_comp}{Внутреннее прямое произведение групп} 
+			\item \hyperlink{inpro:in_comp}{Свойства внутреннего произведения групп}
+			\item \hyperlink{th:keli}{т. Кэли}
+			\item Изоморфизм внутренного и внешнего произведений
+			\item \hyperlink{el}{Формула Эйлера,т. Эйлера, свойства ф. Эйлера,группа подстановок}
+			\item \hyperlink{def:while}{Цикл, независимые циклы, транспозиция}
+			\item \hyperlink{th:while}{Теоремы о циклах}
+			\end{enumerate} */
+
+\end{document}
