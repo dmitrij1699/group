@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{dsfont}
 \usepackage{amssymb}
 \usepackage{hyperref}
@@ -12,52 +13,79 @@
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{mathrsfs}
+
 \long\def\/*#1*/{} %magic for multi-line comments
 \righthyphenmin=2
 \definecolor{linkcolor}{HTML}{FF0000}
 \definecolor{urlcolor}{HTML}{FF0000}
 \hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+
+
 \begin{document}
 	\tableofcontents
 	\newpage
 	\part{3 семестр. Основы теории групп.}
-		\section{Основные классы алгебраических систем}
-		\hypertarget{indef:gruppoid}{\textbf{Группоид}}= множество+\hyperref[def:bin_oper]{бинарная операция} \\
-		\hypertarget{indef:halfgroup}{\textbf{Полугруппа}}= Группоид+свойство ассоциативности ($(x*y)*z=x*(y*z)$) \\
-		\hypertarget{indef:monoid}{\textbf{Моноид}} = Полугруппа + нейтральный элемент ($(e*x=x*e=x) ; (0+x=x+0=x)$) \\
-		\section{Группа}
-		\hypertarget{indef:group}{\textbf{Группа}} = Моноид + существование обратного элемента (противоположный) \\
+
+	\section{Самые начала теории групп}
+		
+
+	\subsection{Основные классы алгебраических систем}
+	Для определения группы введем несколько новых страшных понятий.
+		\hypertarget{indef:gruppoid}{\textbf{Группоид}} — это множество чего угодно +\hyperref[def:bin_oper]{бинарная операция}. \\
+		\hypertarget{indef:halfgroup}{\textbf{Полугруппа}} — группоид + ассоциативность операции, т.е. $(x*y)*z=x*(y*z)$. \\
+		\hypertarget{indef:monoid}{\textbf{Моноид}} — полугруппа + нейтральный элемент, т.е. $(e*x=x*e=x)$ или $(0+x=x+0=x)$. \\
+		Выдохнули и забыли эти слова до экзамена. \\
+
+	\subsection{Группа}
+		\hypertarget{indef:group}{\textbf{Группа}} — моноид + обратный элемент для каждого жителя нашего множества, т.е. $x*x^{-1} = x^{-1}*x = e$.\\
+		Согласно сложившейся традиции будем обозначать произвольную группу латинской $G$. \\
 		\hypertarget{inpro:group}{\textbf{Свойства групп:}}\begin{enumerate}
-			\item Единственность нейтрального элемента
-			\item Единственность обратного элемента
-			\item $(x*y)^{-1}=y^{-1}*x^{-1}$
-			\item $(x^{-1})^n=(x^n)^{-1} , n \in \mathds{N}$
-			\item $x^n*x^m=x^{n+m} n,m \in \mathds{Z} $ 
+			\item Единственность нейтрального элемента \\
+				$\LHD$ Пусть $\exists e_1, e_2 \in G$. Тогда $e_1 = e_1 * e_2 = e_2$ $\RHD$
+			\item Единственность обратного элемента \\
+				$\LHD$ Пусть $\exists x_1^{-1}, x_2^{-1} \in G : x* x_1^{-1} = e, x*x_2^{-1} = e$. Тогда $x*x_1^{-1} = e = x*x_2^{-1}$. Домножаем слева на $x^{-1}$ и получаем $ x_1^{-1} = x_2^{-1}$ $\RHD$
+			\item $(x*y)^{-1}=y^{-1}*x^{-1}$ \\
+				Сперва одеваешь рубашку, а потом пиджак; снимаешь наоборот. $(c)$ Если более строго, то \\
+				$\LHD (x*y)^{-1} * (x*y) = e$, $(y^{-1}*x^{-1})*(x*y) = y^{-1}*(x^{-1}*x)*y = y^{-1}*y = e \rightarrow (x*y)^{-1} = y^{-1}*x^{-1} \RHD$
+			\item $(x^{-1})^n=(x^n)^{-1} , n \in \mathds{N}$ \\
+				$\LHD ! \RHD$
+			\item $x^n*x^m=x^{n+m} n,m \in \mathds{Z} $ \\
+				$\LHD ! \RHD$
 			\item Уравнение $ax=b$ имеет единственное решение $x=a^{-1}b$ 
-			$(xa=b\Rightarrow x=ba^{-1})$
+			$(xa=b\Rightarrow x=ba^{-1})$ \\
+				$\LHD ! \RHD$
 			\item $xy=e \Rightarrow y=x^{-1} $\\
+				$\LHD ! \RHD$ \\
 		\end{enumerate}
-		Коммутативная группа = абелева группа (группа, в которой выполняется свойство коммутативности $\forall x, y \in \mathds{G} \Rightarrow xy=yx$)\\
-		\hypertarget{indef:por_group}{\textbf{Порядок группы}} ($|\mathds{G}|$) -число элементов в группе\\
-		\hypertarget{indef:por_el}{\textbf{Порядок элемента}} ($|x|)= min \{ n\in\mathds{N} :x^n=e\}$ (т.е. минимальная натуральная степень, в которую нужно возвести элемент, что бы он превратился в "единицу") \\
+		Пожалуйста, обратите внимание на тривиальные доказательства единственности. Всякий уважающий себя студент должен их воспроизвести даже во сне. \\\\
+		Еще несколько полезных определений, которые необходимо знать. \\
+		\textbf{Коммутативная группа}(абелева) — группа, в которой есть коммутативноста, т.е. $\forall x, y \in \mathds{G} \Rightarrow xy=yx$)\\ 
+		\hypertarget{indef:por_group}{\textbf{Порядок группы}} ($|\mathds{G}|$) -число элементов в группе.\\
+		\hypertarget{indef:por_el}{\textbf{Порядок элемента}} ($|x|)= min \{ n\in\mathds{N} :x^n=e\}$ (т.е. минимальная натуральная степень, в которую нужно возвести элемент, что бы он превратился в "единицу"). \\
 		
+
 		\newpage
-		\section{Подгруппа}
+
+
+		\subsection{Подгруппа}
 		
+		Проводим аналогию с подпространствами и радуемся таким знакомым понятиям. \\
+		Подмножество H группы G называется \hypertarget{indef_subgroup}{\textbf{подгруппой}} этой группы, если оно само является группой относительно той же операции.
 		$\mathds{H} \le \mathds{G}$;
-		$\mathds{G}:\mathds{H}$ является группой относительно той же операции. (Подмножество H группы G называется \hypertarget{indef_subgroup}{\textbf{подгруппой}} этой группы, если оно само является группой относительно той же операции)
+		$\mathds{G}:\mathds{H}$ является группой относительно той же операции. 
 		
 		Тривиальные подгруппы- это $e$ и $\mathds{G}$
 		
 		Если $\mathds{H}\le \mathds{G}$ и $\mathds{H} \not= \mathds{G}$, то будем писать $\mathds{H}<\mathds{G}$.
 		
 		\hypertarget{th:subgrop_e}{\textbf{T. о равенстве единичных элементов в группе и подгруппе}} $H<G \Rightarrow e_H=e_G$
-		
-		\textbf{Док-во:} $h \in \mathds{H} \rightarrow he_H=h ; he_G=h \Rightarrow  e_Gg^{-1}he_H=h^{-1}h=e_Ge_H \Rightarrow e_H=e_G $
+		$\LHD h \in \mathds{H} \rightarrow he_H=h ; he_G=h \Rightarrow  e_Gg^{-1}he_H=h^{-1}h=e_Ge_H \Rightarrow e_H=e_G \RHD$ \\
 		
 		\hypertarget{th:subgroup_-1}{\textbf{Т. о равенстве обратных элементов}} $H<G, h \in H \Rightarrow h_H^{-1}=h_G^{-1}$
+		$\LHD ! \RHD$
 		
-		\hypertarget{th_subgroup_cri}{\textbf{Критерий подгруппы:}} $ \daleth  H<G$ и $H<G \Leftrightarrow $ 
+		*!!\hypertarget{th_subgroup_cri}{\textbf{Критерий подгруппы:}}  $ \daleth  H<G$ и $H<G \Leftrightarrow $ 
 		\begin{equation*}
 		\begin{cases}
 		H \not= \varnothing 
@@ -79,10 +107,10 @@
 		\end{cases}
 		\end{equation*}
 		
-		$x\in H \Rightarrow x^k <H, \forall k \in N$, т.к. $|G|<\infty\Rightarrow E l,m : x^l=x^m\Rightarrow x^{l-m}\Rightarrow =e \Rightarrow e \in H$
+		$x\in H \Rightarrow x^k <H, \forall k \in N$, т.к. $|G|<\infty\Rightarrow E l,m : x^l=x^m\Rightarrow x^{l-m}\Rightarrow =e \Rightarrow e \in H$ !!*
 		
 		
-		Если $G$- коммутативная группа, то $xH=Hx$, то $G/H=H\textbackslash G$. Можем ввести операцию в $G/H \qquad (xH)(yH)=(xy)H$
+		%Если $G$- коммутативная группа, то $xH=Hx$, то $G/H=H\textbackslash G$. Можем ввести операцию в $G/H \qquad (xH)(yH)=(xy)H$
 		
 		
 		
@@ -91,13 +119,19 @@
 		%	\item 
 		%\end{enumerate}
 		
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 		\newpage
-		\section{Отношения эквивалентности и смежные классы и все-все-все}
+		\section{Не самые начала теории групп}
+	
+		\subsection{Отношение эквивалентности}
 		
 		Отношения на множестве $M$:
 		$T \le M*M=\{(a,b):a,b\in M\}$
 		
-		$aTb$-если пара$(a,b)\in T$ 
+		$aTb \Leftrightarrow (a,b)\in T$ 
 		
 		Примеры:
 		\begin{enumerate}
@@ -116,56 +150,24 @@
 		
 		Будем иметь ввиду вместо $aTb=a\sim b$, $T_a=\{b\in M:a\sim b\}$
 		
-		Свойства:
+		Теорема:
 		\begin{enumerate}
-			\item $a\in T_a$
-			\item $\bigcup_{a\in M} T_a=M$
+			\item $a\in T_a$ \\
+				$\LHD ! \RHD$
+			\item $\bigcup_{a\in M} T_a=M$ \\
+				$\LHD ! \RHD$ \\
 			\item $T_a \bigcap T_b \not= \varnothing \rightarrow T_a=T_b$
+				$\LHD ! \RHD$ \\
 		\end{enumerate}
 		
 		%Здесь док-во T_a=T_b
 		
 		Итак: M разбито на непересекающиеся подмножества $M\rightarrow M/\sim$ (факторизация)
-		
-		Пример: $H<G \quad x\sim y \leftrightarrow x^{-1}y \in H \leftrightarrow \exists h\in H: x^{-1}y=h\leftrightarrow y=xh, h\in H$; таким образом $T_x=\{y:x\sim y\}=\{y:y=xh\}=xH;$
-		
-		Определение: $xH=\{xh, h\in H\}$
-		
-		$T_x=xH \rightarrow$ \hypertarget{indef:left_class}{\textbf{левым смежным классом}} по подгруппе $H$
-		
-		Аналогично, если $ x\sim y$ ввести по формуле $yx^{-1}\in H\rightarrow T_x=Hx$-\hypertarget{indef:right_class}{\textbf{правый смежный класс}}.
-		
-		
-		
-		
-	
-		
-		$T_a=\{b:a\sim b\} $
-		
-		% %Тут что-то было..
-		
-		Если $(Z,+)$ и $(nZ,+)$, то $a\rightarrow a+nZ$
-		
-		Вместо $a\rightarrow a+nZ$ будем писать $[a]_n$ или $ \bar{a_n}$ или $\bar{a}$ или(like a pro) $a$
-		
-		$Z/_{\sim}=Z/_{nZ}=Z_n$
-		
-		Кольцо$(A,*,+)$
-		$\bigoplus$-коммутативность
-		$\bigodot$-дистрибутивность
-		
-		Бывают кольца коммутативные$(ab=ba)$ и с единицей$(ea=ae=a)$
-		
-		Подкольцо-это кольцо относительно тех же операций
-		
-		Поле-коммутативное ассоциативное кольцо с единицей $e\not= 0$.Кроме того, $\forall x\not=0 \exists x^{-1} (xx^{-1}=x^{-1}x=e)$
-		
-		$[a]_n+[b]_n=[a+b]_n$ и $[a]_n [b]_n=[ab]_n$
-		
+
 		\textbf{Пара необходимых теорем о отношениях эквивалентности:}
+
 		\begin{enumerate}
-					
-		
+							
 		\item $	\left
 			.\begin{aligned}
 			a\sim a^\prime \\
@@ -191,109 +193,42 @@
 		$\LHD xh_1=xh_2 \rightarrow h_1=h_2 \RHD$
 		\end{enumerate}
 		
-		$\begin{aligned}
-		H<G \quad x\sim y & \quad x^{-1}y\in H \leftrightarrow y\in xH \text{(\textbf{Левый смежный класс})} \\
-		& \quad yx^{-1}\in H \leftrightarrow y\in Hx \text{(\textbf{Правый смежный класс})}
-		\end{aligned} $
-				
-		Если $G$-коммутативна, то $xH=Hx$
-				
-		Множество левых смежных классов обозначается $G\diagup H $
-				
-		Множество правых смежных классов обозначается $H\diagdown G$ 
 		
-		$|G\diagup H|=|H\diagdown G|=$индекс подгруппы
+		Пример: $H<G x\sim y \leftrightarrow x^{-1}y \in H \leftrightarrow \exists h\in H: x^{-1}y=h\leftrightarrow y=xh, h\in H$; таким образом $T_x=\{y:x\sim y\}=\{y:y=xh\}=xH;$
 		
-		\hypertarget{th:t_lang}{\textbf{Теорема Лагранжа}} 
-				Если $|G|=n<\infty \rightarrow |G|\vdots |H| \text{, что равносильно определению } |G|=|H|\cdot |_G\diagup^H| 
-				\text{где группа }G\text{-конечная группа}	 $ 
-			
-			
-		\hypertarget{sl:t_lang}{\textbf{Следствия из теоремы Лагранжа:}}\begin{enumerate} 
-			\item$|G|\vdots |x|$
-	
-			$\LHD x\Rightarrow H=<x>, |H|=|x|
-			\RHD$
-			
-			
-			
-			\item	$|H| \, \Big{|}\, |G|$
-			
-			
-			\item	$x \in G \rightarrow |x| \, \Big| \, |G| $
-			
-			
-			\item	$|G|=p -\text{простое число}\rightarrow G \text{циклическая группа, причем если} g\not= e \rightarrow G=<g>$
-			
-			
-			\item	$|G|=n\\
-				g\in G\rightarrow g^n=e$
-			
-			\item[Малая теорема Ферма 6.]
-				$a^p \equiv a(mod\, p)$
-			
-			\item[Функция Эйлера 7.]
-				Функция Эйлера $(\phi (n))$-функция, равная количеству натуральных чисел, меньших и взаимно простых с ним.
-				
-			\item[Т. Вильсона 8.]
-				$(p-1)!+1\,\vdots \,p \leftrightarrow p-\text{простое}$
-		\end{enumerate}	
-						
-			Пусть $H<G \text{, где }G - \forall$
-			
-			Пытаемся ввести операцию $(xH)(yH)=(xy)H$. Когда она корректна?\\
-			Когда $\begin{cases}
-			x \sim x' \\
-			y \sim y'
-			\end{cases} \rightarrow xy \sim x'y'$
-			$xy\sim x'y'=xh_1 yh_2 \\
-			xy=xh_1 yh_2 h_3 \qquad \Big{|} \cdot x^{-1}\\
-			y=h_1yh_4 \\
-			e=y^{-1}h_1 y h_4\\
-			y^{-1}h_1y=h_5 \rightarrow \boxed{ y^{-1}Hy \le H \quad \forall y \in G \textcolor{red}{(1)} }\\
-			\text{Из \textcolor{red}{(1)}} \rightarrow H \le yHy^{1} \quad \forall y \rightarrow H \le y^{-1}Hy \leftrightarrow \boxed{ y^{-1}Hy=H \quad \forall y\in G \textcolor{red}{(2)}  } \leftrightarrow \boxed{ Hy=yH \quad \forall y\in G \textcolor{red}{(3)} }$
-			
-			
-			$H<G$ называется \hypertarget{indef:norm_gr}{\textbf{нормальной}}, если выполнено любое из \textcolor{red}{3} равносильных условий. \\
-			В этом случае пишут $H\lhd G $\\		
-			$\rceil H\lhd \rightarrow G/H$-группа относительно $(xH)(yH)=xyH$\\
-			Группа $G/H$ называется \hypertarget{indef:fact_gr}{\textbf{фактор-группой}} группы $G$ по нормальной подгруппе $H$.
-			
+		%Определение: $xH=\{xh, h\in H\}$		
+		%$T_x=xH \rightarrow$ \hypertarget{indef:left_class}{\textbf{левым смежным классом}} по подгруппе $H		
+		%Аналогично, если $ x\sim y$ ввести по формуле $yx^{-1}\in H\rightarrow T_x=Hx$-\hypertarget{indef:right_class}{\textbf{правый смежный класс}}.
+		%$T_a=\{b:a\sim b\} $
+		
+		% %Тут что-то было..
+		
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+		\subsection{Немного(совсем) о кольцах}
+
+		Если $(Z,+)$ и $(nZ,+)$, то $a\rightarrow a+nZ$
+		
+		Вместо $a\rightarrow a+nZ$ будем писать $[a]_n$ или $ \bar{a_n}$ или $\bar{a}$ или(like a pro) $a$
+		
+		$Z/_{\sim}=Z/_{nZ}=Z_n$
+		
+		Кольцо$(A,*,+)$
+		$\bigoplus$-коммутативность
+		$\bigodot$-дистрибутивность
+		
+		Бывают кольца коммутативные$(ab=ba)$ и с единицей$(ea=ae=a)$
+		
+		Подкольцо-это кольцо относительно тех же операций
+		
+		Поле-коммутативное ассоциативное кольцо с единицей $e\not= 0$.Кроме того, $\forall x\not=0 \exists x^{-1} (xx^{-1}=x^{-1}x=e)$
+		
+		$[a]_n+[b]_n=[a+b]_n$ и $[a]_n [b]_n=[ab]_n$
 		
 		
-			\hypertarget{indef:morfizm}{\textbf{Гомоморфизм}} $\phi:G_1 \rightarrow G_2$ -если $\phi(xy)=\phi(x)\phi(y)$
 			
-			\textbf{Мономорфизм} = инъективный гоморфизм
-			
-			\textbf{Эпиморфизм} = сюръективный гомомрфизм.
-			
-			\textbf{Эндоморфизм} - если $G_1=G_2$
-			
-			\textbf{Автоморфизм} - изоморфизм+эндоморфизм
-			
-			$Ker\phi =\{x\in G_1 :\phi (x)=e_2\} \qquad (=\phi ^{-1}(e_2))$ -Ядро гомоморфизма
-			
-			$Im\phi =\{z\in G_2 ; \exists x\in G_1:\phi (x)=z\}=\{\phi (x), x\in G_1\}=\phi (G_1)$-Образ гоморфизма
-			
-			\hypertarget{inpro:gom}{\textbf{Свойства гомоморфизма:}}
-				\begin{enumerate}
-					\item $\phi (e_1)=e_2 \qquad \text{или } e_G \rightarrow e_H$
-					\item $\phi (x^{-1})=(\phi (x))^{-1} \qquad \text{или } x\rightarrow y  \text{ то } x^{-1}\rightarrow y^{-1}$
-					\item $| \phi (x)|\, \big{|} \, |x|$
-					\item $Im\phi < H \qquad Im\phi=\{ \phi (x), x\in G \}$
-					\item $Ker\phi <G  \qquad  Ker \phi=\{ \phi^{-1}(e_H) \}$
-					\item $Ker\phi \lhd G$
-					\item $\phi (x_1)=\phi (x_2) \leftrightarrow x_1 \equiv x_2 (mod \, Ker\phi) $
-					\item $\phi- \text{мономорфизм}\leftrightarrow Ker \phi =\{e\} $
-					\item $\phi :G \rightarrow H, \psi :H\rightarrow K -\text{гоморфизм} \rightarrow \psi \cdot \phi : G \rightarrow K - \text{гоморфизм}$
-					\item $\phi :G\rightarrow H-\text{изомрфизм} \rightarrow \phi^{-1}-\text{изомрфизм} $
-					\item $\phi \text{-изоморфизм, то } |\phi (x)|=|x|$
-				\end{enumerate}
-				
-			Док-во 6-го св-ва:$\rceil x_1, x_2 \in Ker\phi \rightarrow x_1 x_2 \in Ker\phi \\
-			\phi (x_1)=e \\
-			\phi (x_2)=e \\
-			\phi (x_1x_2)=\phi (x_1) \phi (x_2)=e\cdot e=e$
 			
 			%Док-во ?-го св-ва:$\phi(e_G)=e_H\rightarrow e_G \in Ker\phi\\
 			%\rceil x\in Ker\phi \rightarrow x^{-1}\in Ker\phi\\
@@ -306,27 +241,24 @@
 		
 		%$\mathds{Z},n\mathds{Z}\rightarrow %\frac{\mathds{Z}}{n\mathds{Z}}=\mathds{Z}_n=\{\bar{0},\bar{1},\bar{2},\bar %{3}, \dots , \bar{n-1}\}$- кольцо остатсков при делении на $n$
 		
-		\newtheorem{Th}{Теорема}
-		\newtheorem{Def}{Определение}
 		
 
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
 		
 		
-		% % % % % % % % % % % %
-		
-		
-		
-		
-		\newpage
-		\section{Циклические группы}
-				\hypertarget{indef:circle_group}{\textbf{Циклическая группа}} $\mathds{G}$ -если $ \exists a \in \mathds{G} : \mathds{G}=\{a^k, k \in \mathds{Z} \}$ (можно так же сказать, что циклическая подгруппа состоит из всех степеней элемента) \\
+	
+		\subsection{Циклические группы}
+				\hypertarget{indef:circle_group}{\textbf{Циклическая группа}} $\mathds{G}$ - это такая группа, что $ \exists a \in \mathds{G} : \mathds{G}=\{a^k, k \in \mathds{Z} \}$ (можно так же сказать, что циклическая подгруппа состоит из всех степеней элемента).\\
+				 Традиционно обозначается $G = <x>_n$, где $n$ - порядок элемента. Путем нехитрых умозаключений можно сказать, что: \\
 				Циклическая группа называется \hypertarget{indef:inf_circle_group}{\textbf{конечной}}, если $|\mathds{G}|<\infty; |\mathds{G}|=n \Rightarrow \mathds{G}=\{e,a,a^2, \dots , a^{n-1} \}, a^n=e$\\
 				Циклическая группа называется \hypertarget{indef:noninf_circle_gtoup}{\textbf{бесконечной}}, если $|\mathds{G}|= \infty \Rightarrow \mathds{G}=\{ e,a,a^{-1},a^2,a^{-2}, \dots, a^k, a^{-k}, \dots \}$\\
 				\hypertarget{f:circle}{\textbf{Необходимые формулы и утверждения о циклических группах}}:
 				\begin{enumerate}
-					\item $|x^k|=\frac{|x|}{(|x|,k)}$
-					\item $x^n x^m=x^{n+m}; (x^n)^m=x^{nm}; x^0=e$ при $n,m \in \mathds{Z}$
+					\item $|x^k|=\frac{|x|}{(|x|,k)}$ \\
+						$\LHD ! \RHD$
+					\item $x^n x^m=x^{n+m}; (x^n)^m=x^{nm}; x^0=e$ при $n,m \in \mathds{Z}$ \\
+						$\LHD ! \RHD$
 					\item$G,x \quad <x>=\{x^n,\text{ где } n\in Z\}$-циклическая подгруппа группы $G$
 					
 				\end{enumerate} 
@@ -341,24 +273,25 @@
 					
 					$G$-циклическая группа, если $\exists x\in \mathds{G}:\mathds{G}=<x>$
 					
+
 					\hypertarget{th}{\textbf{Теоремы о циклических группах:}}
 					
-					\textbf{Теорема.} У циклической группы все подгруппы циклические, т.е. $G$-циклическая группа.($H<G \Rightarrow H$-циклическая группа)
+					\textbf{Теорема.} У циклической группы все подгруппы циклические, т.е. $G$-циклическая группа.($H<G \Rightarrow H$-циклическая группа) \\
+						$\LHD ! \RHD$
 					
-					%Док-во: Оно было, но его украли
-					
-					\textbf{Теорема.} $G$-циклическая группа, пусть $|\mathds{G}|=n \text{и } n\vdots k \Rightarrow \exists ! H<G:|H|=k$
+					\textbf{Теорема.} $G$-циклическая группа, пусть $|\mathds{G}|=n \text{и } n\vdots k \Rightarrow \exists ! H<G:|H|=k$\\
+						$\LHD ! \RHD$ \\\\
 		
 		
 							%$\mathds{Z},n\mathds{Z}\rightarrow %\frac{\mathds{Z}}{n\mathds{Z}}=\mathds{Z}_n=\{\bar{0},\bar{1},\bar{2},\bar %{3}, \dots , \bar{n-1}\}$- кольцо остатсков при делении на $n$
 		
-					\begin{Th}
-						$\mathds{Z}_n$-поле $\leftrightarrow n$-простое 
-					\end{Th}
+					%\begin{Th}
+						*!!$\mathds{Z}_n$-поле $\leftrightarrow n$-простое 
+					%\end{Th}
 										
-					\begin{Th}
+					%\begin{Th}
 						$\mathds{Z}_n \quad k-$обратим в $\mathds{Z}_n \leftrightarrow n$ и $k$-взаимно просты $\bigl\{ (n,k) =1 \bigr\} $
-					\end{Th}
+					%\end{Th}
 					
 				$\phi :G_1 \rightarrow G_2$ называется изоморфизмом, если 
 				$\begin{cases}
@@ -366,22 +299,20 @@
 				\phi$-биекция$
 				\end{cases} $
 						
-				\begin{Th}
+				%\begin{Th}
 					$\daleth G=<x>,\cdot$ \\
 						-Если $|G|=\infty \Rightarrow G\cong \mathds{Z},+  \quad(\mathds{Z}=<1>)(G_1\cong G_2)$, то группы называются изоморфными.\\
-						-Если $|G|=n<\infty \Rightarrow G\cong \mathds{Z}_n,+$
-				\end{Th}
+						-Если $|G|=n<\infty \Rightarrow G\cong \mathds{Z}_n,+$ !!*
+				%\end{Th}
 		
-		\newpage
-		\section{Подстановки}
+
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+		\subsection{Подстановки}
 		
-			\hypertarget{el}{\textbf{Функция Эйлера}}$\bigl\{\varphi (n) \bigr\} $ равна количеству натуральных чисел, меньших чем $n$ и взаимно простых с $n$.\\
-			\textbf{Теорема Эйлера} $a^{\phi(n)} \equiv 1(mod \, n) $\\
-			\textbf{Свойства $\varphi(n)$:} \begin{enumerate}
-				\item	$\phi(p)=p-1, p-\text{простое}$
-				\item	$\phi(p^n)=p^n-p^{n-1}, p-\text{простое}$
-				\item	$\phi(mn)=\phi(m)\phi(n), \qquad (m,n)=1$	
-			\end{enumerate}
+			
 			$S_n$-группа подстановок(так же называют симметричной группой) \\
 			$x=\{1,2,3, \dots , n\}$, $S_n$-мн-во биективных функций $\varphi :X\rightarrow X$ \\
 			$\varphi= \begin{pmatrix}
@@ -433,7 +364,8 @@
 		2 & 1 & 4 & 3
 		\end{pmatrix}=(12)(34)=(34)(12)$
 		
-		\hypertarget{def:while}{\textbf{Независимые циклы}}-называются такие циклы циклы,у которых числа входят в один цикл, но не входят во второй цикл.\\
+		\hypertarget{def:while}{\textbf{Независимые циклы}} - это такие циклы,в которых числа входят в один цикл, но не входят во второй цикл. Например, $(123)(456)$ - независимый.\\
+		Более обще: цикл вида $(i_1 i_2 ... i_k)(i_{k+1} ... i_{k+l})...(i_{k+p} ... i_{k + n})$, где все $i_j$ различны, будем называть независимым.\\
 		Циклом длины два называется \textbf{транспозиция.}
 		
 		\hypertarget{th:while}{\textbf{Теоремы:}}\begin{enumerate}
@@ -453,11 +385,12 @@
 		
 		\end{enumerate}
 		
-		\begin{Th}
-			$|G|=\text{НОК}(k_1,k_2, \dots ,k_m)$
-		\end{Th}
+		%\begin{Th}
+			$|G|=\text{НОК}(k_1,k_2, \dots ,k_m)$\\
+				$\LHD ! \RHD$
+		%\end{Th}
 		
-		Инверсия $ij$-если $i>j$, но $i$ левее $j$
+		\textbf{Определение}: Инверсия $ij$ - это если $i>j$, но $i$ левее $j$.
 		
 		Подстановка $G=\begin{pmatrix}
 		l_1 & l_2 & \dots & l_n \\
@@ -478,21 +411,165 @@
 		1 & 2 & \dots & j & \dots & i & \dots & n 
 		\end{pmatrix}$-нечет
 		
-		\begin{Th}
+		%\begin{Th}
 			$G=\alpha_1 \alpha_2 \cdot \dots \cdot \alpha_n$-произведение независимых циклов.\\
 			$sgnG=(-1)^{n-m} \quad (=(-1)^{n+m})$
-		\end{Th}
-		
+		%\end{Th}
 		
 		
 		\newpage
+		\section{Какие подгруппы вообще бывают нормальными?}
+
+		
+		\subsection{Классы смежности}
+
+			$\begin{aligned}
+				H<G \quad x\sim y & \quad x^{-1}y\in H \leftrightarrow y\in xH \text{(\textbf{Левый смежный класс})} \\
+				& \quad yx^{-1}\in H \leftrightarrow y\in Hx \text{(\textbf{Правый смежный класс})}
+			\end{aligned} $
+				
+			Если $G$-коммутативна, то $xH=Hx$
+				
+			Множество левых смежных классов обозначается $G\diagup H $	
+				
+			Множество правых смежных классов обозначается $H\diagdown G$ 
+		
+			$|G\diagup H|=|H\diagdown G|=$индекс подгруппы
+		
+		\subsection{Нормальная подгруппа}
+						
+			Пусть $H<G$
+			
+			Пытаемся ввести операцию $(xH)(yH)=(xy)H$. Когда она корректна?\\
+			Когда $\begin{cases}
+			x \sim x' \\
+			y \sim y'
+			\end{cases} \rightarrow xy \sim x'y'$
+			$xy\sim x'y'=xh_1 yh_2 \\
+			xy=xh_1 yh_2 h_3 \qquad \Big{|} \cdot x^{-1}\\
+			y=h_1yh_4 \\
+			e=y^{-1}h_1 y h_4\\
+			y^{-1}h_1y=h_5 \rightarrow \boxed{ y^{-1}Hy \le H \quad \forall y \in G \textcolor{red}{(1)} }\\
+			\text{Из \textcolor{red}{(1)}} \rightarrow H \le yHy^{1} \quad \forall y \rightarrow H \le y^{-1}Hy \leftrightarrow \boxed{ y^{-1}Hy=H \quad \forall y\in G \textcolor{red}{(2)}  } \leftrightarrow \boxed{ Hy=yH \quad \forall y\in G \textcolor{red}{(3)} }$\\\\
+			$(1) \Leftrightarrow (2) \Leftrightarrow (3) \Leftrightarrow (1)$.\\
+			
+			$H<G$ называется \hypertarget{indef:norm_gr}{\textbf{нормальной}}, если выполнено любое из \textcolor{red}{3} равносильных условий. \\
+			В этом случае пишут $H\lhd G $\\		
+			$\rceil H\lhd \rightarrow G/H$-группа относительно $(xH)(yH)=xyH$\\
+			Группа $G/H$ называется \hypertarget{indef:fact_gr}{\textbf{фактор-группой}} группы $G$ по нормальной подгруппе $H$.
+
+		\newpage
+		\section{Лагранж гуляет с Эйлером}
+
+		\subsection{Теорема Лагранжа со своими следствиями}
+		\hypertarget{th:t_lang}{\textbf{Теорема Лагранжа}} 
+				Если $|G|=n<\infty \rightarrow |G|\vdots |H| \text{, что равносильно определению } |G|=|H|\cdot |_G\diagup^H| 
+				\text{где группа }G\text{-конечная группа}	 $ 
+			
+			
+		\hypertarget{sl:t_lang}{\textbf{Следствия из теоремы Лагранжа:}}
+
+		\begin{enumerate} 
+
+			\item$|G|\vdots |x|$
+	
+			$\LHD x\Rightarrow H=<x>, |H|=|x|
+			\RHD$
+			
+			
+			
+			\item	$|H| \, \Big{|}\, |G|$
+			
+			
+			\item	$x \in G \rightarrow |x| \, \Big| \, |G| $
+			
+			
+			\item	$|G|=p -\text{простое число}\rightarrow G \text{циклическая группа, причем если} g\not= e \rightarrow G=<g>$
+			
+			
+			\item	$|G|=n\\
+				g\in G\rightarrow g^n=e$
+			
+			\item\textbf{Малая теорема Ферма} \\
+				$a^p \equiv a(mod\, p)$
+						
+			\item \textbf{Теорема Вильсона} \\
+				$(p-1)!+1\,\vdots \,p \leftrightarrow p-\text{простое}$
+
+		\end{enumerate}	
+		
+		\subsection{Пара слов об Эйлере}
+
+		\hypertarget{el}{\textbf{Функция Эйлера}}$\bigl\{\varphi (n) \bigr\} $ равна количеству натуральных чисел, меньших чем $n$ и взаимно простых с $n$.\\
+
+			\textbf{Теорема Эйлера} $a^{\phi(n)} \equiv 1(mod \, n) $\\\\
+			
+			\textbf{Свойства $\varphi(n)$:} 
+			\begin{enumerate}
+				\item	$\phi(p)=p-1, p-\text{простое}$
+				\item	$\phi(p^n)=p^n-p^{n-1}, p-\text{простое}$
+				\item	$\phi(mn)=\phi(m)\phi(n), \qquad (m,n)=1$	
+			\end{enumerate}
+		%А дальше докладчик, увы, решил не продолжать.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+		\newpage
+		\section{Морфизмы}
+
+			\hypertarget{indef:morfizm}{\textbf{Гомоморфизм}} $\phi:G_1 \rightarrow G_2$ -если $\phi(xy)=\phi(x)\phi(y)$
+			
+			\textbf{Мономорфизм} — инъективный гоморфизм
+			
+			\textbf{Эпиморфизм} — сюръективный гомомрфизм.
+			
+			\textbf{Эндоморфизм} — если $G_1=G_2$
+			
+			\textbf{Автоморфизм} — изоморфизм+эндоморфизм
+			
+			$Ker\phi =\{x\in G_1 :\phi (x)=e_2\} \qquad (=\phi ^{-1}(e_2))$ — ядро гомоморфизма.
+			
+			$Im\phi =\{z\in G_2 ; \exists x\in G_1:\phi (x)=z\}=\{\phi (x), x\in G_1\}=\phi (G_1)$ — образ гоморфизма.
+			
+			\hypertarget{inpro:gom}{\textbf{Свойства гомоморфизма:}}
+				\begin{enumerate}
+					\item $\phi (e_1)=e_2 \qquad \text{или } e_G \rightarrow e_H$\\
+						$\LHD  \RHD$
+					\item $\phi (x^{-1})=(\phi (x))^{-1} \qquad \text{или } x\rightarrow y  \text{ то } x^{-1}\rightarrow y^{-1}$\\
+						$\LHD  \RHD$
+					\item $| \phi (x)|\, \big{|} \, |x|$\\
+						$\LHD ! \RHD$
+					\item $Im\phi < H \qquad Im\phi=\{ \phi (x), x\in G \}$\\
+						$\LHD ! \RHD$
+					\item $Ker\phi <G  \qquad  Ker \phi=\{ \phi^{-1}(e_H) \}$\\
+						$\LHD ! \RHD$
+					\item $Ker\phi \lhd G$\\
+						$\LHD ! \RHD$
+					\item $\phi (x_1)=\phi (x_2) \leftrightarrow x_1 \equiv x_2 (mod \, Ker\phi) $\\
+						$\LHD ! \RHD$
+					\item $\phi- \text{мономорфизм}\leftrightarrow Ker \phi =\{e\} $\\
+						$\LHD ! \RHD$
+					\item $\phi :G \rightarrow H, \psi :H\rightarrow K -\text{гоморфизм} \rightarrow \psi \cdot \phi : G \rightarrow K - \text{гоморфизм}$\\
+						$\LHD ! \RHD$
+					\item $\phi :G\rightarrow H-\text{изомрфизм} \rightarrow \phi^{-1}-\text{изомрфизм} $\\
+						$\LHD ! \RHD$
+					\item $\phi \text{-изоморфизм, то } |\phi (x)|=|x|$\\
+						$\LHD ! \RHD$
+				\end{enumerate}
+				
+			Док-во 6-го св-ва:$\rceil x_1, x_2 \in Ker\phi \rightarrow x_1 x_2 \in Ker\phi \\
+			\phi (x_1)=e \\
+			\phi (x_2)=e \\
+			\phi (x_1x_2)=\phi (x_1) \phi (x_2)=e\cdot e=e$
+
+		\newpage
 		\section{Прямое произведение}
 		
-			\begin{Def}
+			%\begin{Def}
 				\textbf{Прямое произведение групп} \\
 				$G_1, G_2, \dots , G_n - \text{группы} \, (\cdot) \quad G=G_1\times G_2 \times \dots \times G_n=\{ (g_1,g_2, \dots , g_n):g_i\in G_i, i=1, \dots , n  \}$ \\
 				Введем операцию $(g_1,g_2, \dots , g_n) \cdot (g_1',g_2', \dots , g_n')=(g_1 g_1', g_2, g_2', \dots, g_n g_n') $
-			\end{Def}
+			%\end{Def}
 			%\begin{Th}[G-группа]
 				%$\lhd ()             
 			%\end{Th}
@@ -541,9 +618,9 @@
 			Пример: $C_2 \times C_3 \cong C_6 \, (\cdot) $\\
 			$\mathds{Z}_2 \oplus \mathds{Z}_3 \cong \mathds{Z}_6 \, (+)$ 
 		\end{enumerate} 
-		\begin{Th}
+		%\begin{Th}
 			$G, \, G_1, G_2, \dots , G_n < G$
-		\end{Th}
+		%\end{Th}
 		\begin{enumerate}
 			\item $(6\Rightarrow 5)  $
 			\item $6 \Rightarrow 7, \text{то если} \forall g\in G \exists ! g_1 \in G_1 , \dots , g_n\in G_n: g=g_1 g_2 \dots g_n  \Rightarrow G_i \cap G_j = \{e\} \quad (i\not= j)\\
@@ -551,7 +628,7 @@
 			\item $\begin{aligned}4\\ 7\end{aligned}  \} \Rightarrow 8 \quad \text{т.е. если } \, G_i \lhd G_j \quad   G_j\lhd G_i, G_i \cap G_j= \{e\}  \Rightarrow g_i g_j=g_j g_i (\Leftrightarrow g_i g_j g_i^{-1} g_j^{-1}=e ) $
 		\end{enumerate}
 		
-		\begin{Def}
+		%\begin{Def}
 			\hypertarget{def:incomp}{\textbf{Внутренне прямое произведение:}} \\
 			$G, \quad G_i, \dots , G_n <G \\
 			G-\text{внутренне прямое произведение этих подгрупп, если} $\\
@@ -559,7 +636,7 @@
 				\item $\forall g\in G \exists !g_1,\dots, g_n : g=g_1g_2 \dots g_n$ 
 				\item $G_i \lhd G_i; i=1, \dots n  $
 			\end{enumerate}
-		\end{Def}	
+		%\end{Def}	
 		
 		
 		\textbf{Теорема}	G изоморфно $G_1 \times G_2 \times \dots \times G_n\\ (\text{т.е. внутреннее прямое произведние изоморфно внешнему})$
@@ -586,7 +663,7 @@
 		
 		%Внутреннее прямое произведение  $G, G_1, \dots ,G_n <G$
 		
-		\begin{Th}
+		%\begin{Th}
 			$* * \begin{cases}
 			\forall g!=g_1 \dots g_n \quad(1)\\
 			g_i g_j=g_j g_i  \qquad(2)
@@ -595,7 +672,7 @@
 			G_i \lhd G \qquad (2)
 			\end{cases}  \\
 			\text{ где} g_i\text{-элемент i-ой группы, а} g_j \text{-элемент j-ой группы}$
-		\end{Th}
+		%\end{Th}
 		$\lhd \rightarrow (1)** \rightarrow (1)* \\
 		(1)**\rightarrow G_i \cap G_j=\{e\} \qquad \rceil g\in G_i \cap G_j \rightarrow g=e \cdot e  \dots e \cdot g \cdot e  \dots e = e \dots e g e \dots e \rightarrow g=e \\
 		gg_ig^{-1}=g_1`g_2` \dots g_n`g_i` (g_n`)^{-1} \dots (g_1`)^{-1}  =g_i` g_i (g_1`)^{-1} \in G_i \rightarrow G_i \lhd G \rhd$ \\
@@ -626,9 +703,9 @@
 			\end{cases}$
 			
 		\end{enumerate} 	
-		\begin{Th}
+		%\begin{Th}
 			$(G_1\times G_2 )/G_1 \cong G_2 $
-		\end{Th}
+		%\end{Th}
 		
 		$\lhd \quad \phi : G_1 \times G_2 \rightarrow G_2 \\
 		\phi(( g_1 g_2 ))=g_2 \\
@@ -680,9 +757,20 @@
 		
 		
 		
+	%\newpage
+		%\section{Справочник}
+			%\label{def:bin_oper}
+
 	\newpage
-		\section{Справочник.}
-			\label{def:bin_oper}
+	
+	\section{Интересные моменты, необходимые для решения задач}
+
+	\subsection{Группа диэдра}
+	\subsection{Группа кватернионов}
+	\subsection{Как определить прямое произведение групп?}
+
+
+
 			
 	\newpage
 		\section{Вопросы к коллоквиуму}
